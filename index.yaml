@@ -1,0 +1,70 @@
+apps: 
+- name: argo-events
+  displayName: Argo Events 
+  imageUrl: "https://argoproj.github.io/argo-events/assets/logo.png"
+  description: "Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc. on events from a variety of sources like webhooks, S3, schedules, messaging queues, gcp pubsub, sns, sqs, etc"
+  categories:
+  - Queueing
+- name: argo-rollouts
+  displayName: Argo Rollouts 
+  imageUrl: "https://argoproj.github.io/static/3748e3a7881fe3b037f2401b65943dc0/93d75/rollouts.png"
+  description: "Argo Rollouts is a Kubernetes controller and set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, and progressive delivery features to Kubernetes."
+  categories:
+  - Continuous Delivery
+- name: datadog-agent
+  displayName: Datadog 
+  secretKeys:
+    - name: DD_API_KEY
+      label: Datadog API key
+    - name: DD_APP_KEY
+      label: Datadog application key
+  imageUrl: "https://imgix.datadoghq.com/img/dd_logo_n_70x75.png"
+  description: "Datadog’s SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can maintain and optimize your cloud or hybrid environments."
+  categories:
+  - Monitoring
+  - Observability
+- name: goldilocks
+  displayName: Goldilocks 
+  imageUrl: "https://raw.githubusercontent.com/FairwindsOps/goldilocks/4ce63764d40d8215b2d517c7cb34c557cc81e533/img/goldilocks.svg"
+  description: "Goldilocks is a utility that can help you identify a starting point for resource requests and limits."
+  categories:
+  - Monitoring
+- name: kratix
+  displayName: Kratix
+  imageUrl: "https://assets.website-files.com/6194c620b350c4056027fac7/62c6d513f52586d698eb1c43_kratix-logo.png"
+  description: "Kratix is a framework used by platform teams to build the custom platforms tailored to their organisation."
+  categories:
+  - Application Management
+- name: kubernetes-dashboard
+  displayName: Kubernetes Dashboard
+  imageUrl: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg"
+  description: "Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself."
+  categories:
+  - Observability
+- name: kyverno
+  displayName: Kyverno 
+  imageUrl: "https://repository-images.githubusercontent.com/169108858/35923880-823a-11e9-9089-0c9c102f9e6f"
+  description: "Kyverno is a policy engine designed for Kubernetes. Kyverno Policies are managed as Kubernetes resources and no new language is required to write policies."
+  categories:
+  - Security
+- name: polaris
+  displayName: Polaris
+  imageUrl: "https://camo.githubusercontent.com/21017bcdf60b658e5719e8d4b8ebf4ba4c1115ea907f2d8190427a82f8979eaf/68747470733a2f2f706f6c617269732e646f63732e6661697277696e64732e636f6d2f696d672f706f6c617269732d6c6f676f2e706e67"
+  description: "Polaris is an open source policy engine for Kubernetes."
+  categories:
+  - Security
+- name: testkube
+  displayName: Testkube 
+  imageUrl: "https://assets.website-files.com/61e00b3936e571a4ea7a5a4c/63eba7324e90b73e382e9443_testkube-small-logo.svg"
+  description: "Testkube is a Kubernetes-native testing framework that allows you to automate the executions of your existing testing tools inside your Kubernetes cluster."
+  categories:
+  - Testing
+  - Kubeshop
+- name: tracetest
+  displayName: Tracetest
+  imageUrl: "https://assets.website-files.com/625f135a8e554e44ad158913/63f4ff012c966601d2dc37dc_tracetest-small-logo.svg"
+  description: "Tracetest uses your existing OpenTelemetry traces to power trace-based testing with assertions against your trace data at every point of the request transaction."
+  categories:
+  - Testing
+  - Observability
+  - Kubeshop
