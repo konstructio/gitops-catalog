@@ -14,9 +14,9 @@ apps:
 - name: datadog-agent
   displayName: Datadog 
   secretKeys:
-    - name: DD_API_KEY
+    - name: api-key
       label: Datadog API key
-    - name: DD_APP_KEY
+    - name: app-key
       label: Datadog application key
   imageUrl: "https://imgix.datadoghq.com/img/dd_logo_n_70x75.png"
   description: "Datadog’s SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can maintain and optimize your cloud or hybrid environments."
