@@ -2,13 +2,20 @@
 
 The marketplace bound to your gitops desired state.
 
-# community-driven cloud native gitops
+## Community-driven Cloud Native Gitops
 
-The kubefirst gitops catalog repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform once the platform has been provisioned.
+The kubefirst gitops catalog repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
 
-# contributing
+## Contributing
 
 To make a new app available for installation, you'll need to:
-- update `index.yaml` with your new app's name and directory
-- in your new app directory organize your argocd gitops file(s)
-- pull request the changes from your branch to our main branch
+
+- Fork this repository.
+- Create a new directory with your new app's name in your fork.
+- Update [index.yaml](index.yaml) with your app's name and directory.
+- In your app directory, add, and organize your Argo CD gitops file(s).
+- Create a pull request with the changes from your branch to our main branch.
+
+## Need help
+
+As always, we are on our [Slack community](https://kubefirst.io/slack) if you need any help. We also welcome any constructive feedback or feature suggestions.
