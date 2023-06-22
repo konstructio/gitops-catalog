@@ -47,6 +47,13 @@ apps:
   description: "Kyverno is a policy engine designed for Kubernetes. Kyverno Policies are managed as Kubernetes resources and no new language is required to write policies."
   categories:
   - Security
+- name: opencost
+  displayName: OpenCost
+  imageUrl: "https://www.opencost.io/assets/images/opencost-logo-da1451b88bd3065568f9755168643730.png"
+  description: "OpenCost is a vendor-neutral open source project for measuring and allocating infrastructure and container costs in real time."
+  categories:
+  - FinOps
+  - Observability
 - name: polaris
   displayName: Polaris
   imageUrl: "https://camo.githubusercontent.com/21017bcdf60b658e5719e8d4b8ebf4ba4c1115ea907f2d8190427a82f8979eaf/68747470733a2f2f706f6c617269732e646f63732e6661697277696e64732e636f6d2f696d672f706f6c617269732d6c6f676f2e706e67"
