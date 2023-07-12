@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: policy-reporter
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: kyverno
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: policy-reporter
+    repoURL: https://kyverno.github.io/policy-reporter
+    targetRevision: v2.19.4
+    helm:
+      releaseName: policy-reporter
+      values: |
+        ui:
+          enabled: true
+        kyvernoPlugin:
+          enabled: true
+        metrics:
+          enabled: true
+        global:
+          # available plugins
+          plugins:
+            # enable kyverno for Policy Reporter UI and monitoring
+            kyverno: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
