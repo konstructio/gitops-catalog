@@ -13,7 +13,7 @@ spec:
   source:
     chart: kyverno-policies
     repoURL: https://kyverno.github.io/kyverno
-    targetRevision: v2.5.5
+    targetRevision: v3.0.3
     helm:
       releaseName: kyverno-policies
       # values: |
