@@ -24,3 +24,5 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      # https://kyverno.io/docs/installation/platform-notes/#notes-for-argocd-users
+      - Replace=true
