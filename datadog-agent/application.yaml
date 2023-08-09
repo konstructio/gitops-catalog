@@ -19,9 +19,42 @@ spec:
       values: |
         datadog:
           apiKeyExistingSecret: datadog-secret
+          # ### NOTE: uncomment and add your cluster name (x2) to be able to isolate metrics and logs by cluster
+          # clusterName: "myclustername"
+          # env:
+          # - name: DD_ENV
+          #   value: "myclustername"
+          # ### NOTE: uncomment to turn on datadog logging
+          # logs:
+          #   enabled: true
+          #   containerCollectAll: true
+          # ### NOTE: uncomment to turn on datadog apm - you will also need the apm service uncommented below
+          # apm:
+          #   enabled: true
+          # ### NOTE: uncomment to turn on network monitoring
+          # networkMonitoring:
+          #   enabled: true
+          # ### NOTE: uncomment to turn on the process agent
+          # processAgent:
+          #   enabled: true
+          #   processCollection: true
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+# ### NOTE: uncomment below to establish a datadog apm service for your cluster to leverage
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: datadog-apm
+#   namespace: datadog
+# spec:
+#   selector:
+#     app: datadog
+#   ports:
+#     - protocol: TCP
+#       port: 8126
+#       targetPort: 8126
