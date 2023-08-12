@@ -9,11 +9,51 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/syntasso/kratix'
-    path: distribution/single-cluster
+    path: charts/kratix
     targetRevision: HEAD
+  # helm:
+  #   values: |
+  #     # You will need to register a Destination where Kratix can
+  #     # schedule resources. This Destination is a State Store that
+  #     # represents a location where you want to deploy declared
+  #     # resources.
+  #     #
+  #     # In order for Kratix to write any declared resources to this
+  #     # Destination, you will also need to provide configuration
+  #     # via a State Store object.
+  #     #
+  #     # For more details, please see:
+  #     # https://kratix.io/docs/main/reference/destinations/intro
+  #     destinations:
+  #       # This represents the Git repository used by KubeFirst.
+  #       # It depends on the State Store below.
+  #       - name: platform
+  #         namespace: kratix-platform-system
+  #         labels:
+  #           type: platform
+  #         stateStoreRef:
+  #            name: default
+  #            kind: GitStateStore
+  #     stateStores:
+  #       # This requires:
+  #       #  1. The correct Git URL used by K1 and
+  #       #  2. A secret with the necessary values called `default-git-secret`
+  #       #
+  #       #  These values are available or can be generated with the details
+  #       #  in Terraform within the atlantis_secrets` resource.
+  #       #
+  #       # Docs:
+  #       #   https://kratix.io/docs/main/reference/statestore/gitstatestore
+  #       - kind: GitStateStore
+  #         name: default
+  #         namespace: kratix-platform-system
+  #         secretRef:
+  #           name: default-git-secret
+  #         url: https://github.com/<your_username>/gitops.
+  #         path: registry/kratix
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: kratix
+    namespace: kratix-platform-system
   syncPolicy:
     automated:
       prune: true
