@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -44,7 +45,7 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-# ### NOTE: uncomment below to establish a datadog apm service for your cluster to leverage
+# NOTE: uncomment below to establish a datadog apm service for your cluster to leverage
 # ---
 # apiVersion: v1
 # kind: Service
