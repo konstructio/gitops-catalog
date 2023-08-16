@@ -1,0 +1,19 @@
+---
+name: YAML Validation
+on: [push, workflow_dispatch]
+
+jobs:
+  yaml-check:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout this repository
+        uses: actions/checkout@v3.5.3
+
+      - name: Lint YAML files
+        uses: karancode/yamllint-github-action@v2.1.1
+        with:
+          yamllint_config_datapath: .yamllint.yml
+          yamllint_strict: true
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
