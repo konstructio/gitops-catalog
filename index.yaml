@@ -6,14 +6,16 @@ apps:
     imageUrl: "https://argoproj.github.io/argo-events/assets/logo.png"
     description: "Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc. on events from a variety of sources like webhooks, S3, schedules, messaging queues, gcp pubsub, sns, sqs, etc"
     categories:
-      - Queueing
+      - CI/CD
+
   - name: argo-rollouts
     displayName: Argo Rollouts
     website: "https://github.com/argoproj/argo-rollouts"
     imageUrl: "https://argoproj.github.io/static/3748e3a7881fe3b037f2401b65943dc0/93d75/rollouts.png"
     description: "Argo Rollouts is a Kubernetes controller and set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, and progressive delivery features to Kubernetes."
     categories:
-      - Continuous Delivery
+      - CI/CD
+
   - name: datadog-agent
     displayName: Datadog
     website: "https://github.com/DataDog/datadog-agent"
@@ -23,10 +25,10 @@ apps:
       - name: app-key
         label: Datadog application key
     imageUrl: "https://imgix.datadoghq.com/img/dd_logo_n_70x75.png"
-    description: "Datadog’s SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can maintain and optimize your cloud or hybrid environments."
+    description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can maintain and optimize your cloud or hybrid environments."
     categories:
-      - Monitoring
       - Observability
+
   - name: goldilocks
     displayName: Goldilocks
     website: "https://github.com/FairwindsOps/goldilocks"
@@ -34,13 +36,15 @@ apps:
     description: "Goldilocks is a utility that can help you identify a starting point for resource requests and limits."
     categories:
       - Monitoring
+
   - name: kratix
     displayName: Kratix
     website: "https://github.com/syntasso/kratix"
     imageUrl: "https://assets.website-files.com/6194c620b350c4056027fac7/62c6d513f52586d698eb1c43_kratix-logo.png"
     description: "Kratix is a framework used by platform teams to build the custom platforms tailored to their organisation."
     categories:
-      - Application Management
+      - App Management
+
   - name: kubernetes-dashboard
     displayName: Kubernetes Dashboard
     website: "https://github.com/kubernetes/dashboard"
@@ -48,6 +52,7 @@ apps:
     description: "Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself."
     categories:
       - Observability
+
   - name: kyverno
     displayName: Kyverno
     website: "https://github.com/kyverno/kyverno"
@@ -55,6 +60,7 @@ apps:
     description: "Kyverno is a policy engine designed for Kubernetes. Kyverno Policies are managed as Kubernetes resources and no new language is required to write policies."
     categories:
       - Security
+
   - name: opencost
     displayName: OpenCost
     website: "https://github.com/opencost/opencost"
@@ -62,7 +68,7 @@ apps:
     description: "OpenCost is a vendor-neutral open source project for measuring and allocating infrastructure and container costs in real time."
     categories:
       - FinOps
-      - Observability
+
   - name: polaris
     displayName: Polaris
     website: "https://github.com/FairwindsOps/polaris"
@@ -70,6 +76,7 @@ apps:
     description: "Polaris is an open source policy engine for Kubernetes."
     categories:
       - Security
+
   - name: testkube
     displayName: Testkube
     website: "https://github.com/kubeshop/testkube"
@@ -77,7 +84,7 @@ apps:
     description: "Testkube is a Kubernetes-native testing framework that allows you to automate the executions of your existing testing tools inside your Kubernetes cluster."
     categories:
       - Testing
-      - Kubeshop
+
   - name: tracetest
     displayName: Tracetest
     website: "https://github.com/kubeshop/tracetest"
@@ -85,5 +92,3 @@ apps:
     description: "Tracetest uses your existing OpenTelemetry traces to power trace-based testing with assertions against your trace data at every point of the request transaction."
     categories:
       - Testing
-      - Observability
-      - Kubeshop
