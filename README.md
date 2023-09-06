@@ -1,10 +1,13 @@
-# gitops-catalog
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="img/kubefirst-light.svg" alt="Kubefirst Logo">
+    <img alt="" src="img/kubefirst.svg">
+  </picture>
+</p>
 
-The marketplace bounds to your GitOps desired state.
+# Community-driven Cloud Native GitOps
 
-## Community-driven Cloud Native GitOps
-
-The kubefirst gitops catalog repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
+The kubefirst GitOps Catalog repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
 
 ## Contributing
 
@@ -33,6 +36,14 @@ To make a new application available for installation, you'll need to:
   - Add, and organize your Argo CD gitops file(s) into it, if any.
 - Create a pull request with the changes from your branch to our main branch.
 
-## Need help
+### Acceptance Criteria
+
+We will approve all GitOps Catalog application submissions as long as they are working with the latest version of kubefirst.
+
+### Application Maintenance and Removal
+
+We may remove an application from the GitOps Catalog with no notice if a severe vulnerability is discovered. Another reason for removing an application is if an application becomes abandoned or unmaintained by the upstream project.
+
+### Need Help
 
 As always, we are on our [Slack community](https://kubefirst.io/slack) in the #gitops-catalog channel  if you need any help. We also welcome any constructive feedback or feature suggestions.
