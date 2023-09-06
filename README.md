@@ -13,10 +13,10 @@ To make a new application available for installation, you'll need to:
 - Fork this repository.
 - Add a new entry to the [index.yaml](index.yaml) file with:
   - **name**: application name as described in your YAML file.
-  - **displayName**: name to be displayed in the GitOps catalog.
+  - **displayName**: name to be displayed in the GitOps catalog (120 characters maximum).
   - **website**: application website or GitHub repository.
   - **imageUrl**: full web URL for the application's logo. It will be displayed in the GitOps catalog. _For now, it needs to be located on a third-party server, but we'll update this field to grab them from the GitHub repository soon, so it doesn't depend on external URL._
-  - description: an insightful description about your application. It will be displayed in the GitOps Catalog.
+  - **description**: an insightful description about your application. It will be displayed in the GitOps Catalog (200 characters maximum).
   - **categories**: one category amongts the following ones:
     - App management
     - Architecture
