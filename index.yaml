@@ -4,7 +4,7 @@ apps:
     displayName: Argo Events
     website: "https://github.com/argoproj/argo-events"
     imageUrl: "https://argoproj.github.io/argo-events/assets/logo.png"
-    description: "Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc. on events from a variety of sources like webhooks, S3, schedules, messaging queues, gcp pubsub, sns, sqs, etc"
+    description: "Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc. on events from a variety of sources."
     categories:
       - CI/CD
 
@@ -12,7 +12,7 @@ apps:
     displayName: Argo Rollouts
     website: "https://github.com/argoproj/argo-rollouts"
     imageUrl: "https://argoproj.github.io/static/3748e3a7881fe3b037f2401b65943dc0/93d75/rollouts.png"
-    description: "Argo Rollouts is a Kubernetes controller and set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, and progressive delivery features to Kubernetes."
+    description: "A Kubernetes controller & set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, & progressive delivery features to Kubernetes."
     categories:
       - CI/CD
 
@@ -49,7 +49,7 @@ apps:
     displayName: Kubernetes Dashboard
     website: "https://github.com/kubernetes/dashboard"
     imageUrl: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg"
-    description: "Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself."
+    description: "Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage apps running in the cluster & troubleshoot them, as well as manage the cluster itself."
     categories:
       - Observability
 
