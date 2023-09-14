@@ -109,7 +109,14 @@ apps:
     description: "Testkube is a Kubernetes-native testing framework that allows you to automate the executions of your existing testing tools inside your Kubernetes cluster."
     categories:
       - Testing
-
+    secretKeys:
+      - name: testkube-api.cloud.key
+        label: Testkube API Key
+      - name: testkube-api.cloud.orgId
+        label: Testkube Org ID
+      - name: testkube-api.cloud.envId
+        label: Testkube Environment ID
+        
   - name: tracetest
     displayName: Tracetest
     website: "https://github.com/kubeshop/tracetest"
