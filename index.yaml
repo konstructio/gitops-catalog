@@ -116,7 +116,7 @@ apps:
         label: "Testkube Org ID"
       - name: "testkube-api.cloud.envId"
         label: "Testkube Environment ID"
-        
+
   - name: tracetest
     displayName: Tracetest
     website: "https://github.com/kubeshop/tracetest"
