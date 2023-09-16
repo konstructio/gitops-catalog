@@ -1,10 +1,11 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: testkube
   namespace: argocd
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: testkube
@@ -16,8 +17,14 @@ spec:
     targetRevision: 1.11.214
     helm:
       releaseName: testkube
-      # values: |
-      #   example: value
+      values: |
+        testkube-api.minio.enabled: false
+        mongodb.enabled: false
+        testkube-dashboard.enabled: false
+        testkube-api.cloud.url: "agent.testkube.io:443"
+        testkube-api.cloud.key: testkube-api.cloud.key
+        testkube-api.cloud.orgId: testkube-api.cloud.orgId
+        testkube-api.cloud.envId: testkube-api.cloud.envId
   syncPolicy:
     automated:
       prune: true

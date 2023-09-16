@@ -2,19 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: polaris
+  name: kutt
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: '10'
 spec:
   project: default
   source:
-    repoURL: 'https://charts.fairwinds.com/stable'
-    targetRevision: 5.7.6
-    chart: polaris
+    chart: kutt
+    repoURL: https://christianknell.github.io/helm-charts
+    targetRevision: 2.10.4
+    helm:
+      releaseName: my-release
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: polaris
+    namespace: kutt
   syncPolicy:
     automated:
       prune: true
