@@ -110,11 +110,11 @@ apps:
     categories:
       - Testing
     secretKeys:
-      - name: testkube-api.cloud.key
+      - name: API_KEY
         label: Testkube API Key
-      - name: testkube-api.cloud.orgId
+      - name: ORG_ID
         label: Testkube Org ID
-      - name: testkube-api.cloud.envId
+      - name: ENV_ID
         label: Testkube Environment ID
         
   - name: tracetest
