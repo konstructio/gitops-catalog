@@ -28,6 +28,7 @@ apps:
     description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can maintain and optimize your cloud or hybrid environments."
     categories:
       - Observability
+    k3d: false
 
   - name: goldilocks
     displayName: Goldilocks
