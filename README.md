@@ -32,6 +32,7 @@ To make a new application available for installation, you'll need to:
     - Security
     - Storage
     - Testing
+  - **k3d**: set to `false` if the application can't be installed on a k3d cluster. If omitted, we assume it can be installed on a k3d cluster.
 - Create a new directory with your new application's name in your fork.
   - Add, and organize your Argo CD gitops file(s) into it, if any.
 - Create a pull request with the changes from your branch to our main branch.
