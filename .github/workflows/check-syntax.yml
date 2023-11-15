@@ -1,0 +1,26 @@
+---
+name: Syntax Validation
+on: [push, workflow_dispatch]
+
+jobs:
+  syntax-check:
+    name: vale
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v3.5.3
+
+      - name: Get latest version of Vale
+        id: lastversion
+        uses: dvershinin/lastversion-action@v0.0.3
+        with:
+          repository: errata-ai/vale
+
+      - name: Install Vale
+        run: |
+          wget https://github.com/errata-ai/vale/releases/download/v${{ steps.lastversion.outputs.last_version }}/vale_${{ steps.lastversion.outputs.last_version }}_Linux_64-bit.tar.gz -O vale.tar.gz
+          tar -xvzf vale.tar.gz vale
+          rm vale.tar.gz
+
+      - name: Validate the syntax
+        run: ./vale --config=.vale.ini *.md
