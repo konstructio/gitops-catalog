@@ -21,7 +21,7 @@ To make a new application available for installation, you'll need to:
   - **website**: application website or GitHub repository.
   - **imageUrl**: full web URL for the application's logo. It will be displayed in the GitOps catalog. _For now, it needs to be located on a third-party server, but we'll update this field to grab them from the GitHub repository soon, so it doesn't depend on external URL._
   - **description**: an insightful description about your application. It will be displayed in the GitOps Catalog (200 characters maximum).
-  - **categories**: one category amongts the following ones:
+  - **categories**: one category amongst the following ones:
     - App management
     - Architecture
     - CI/CD
@@ -34,7 +34,7 @@ To make a new application available for installation, you'll need to:
     - Storage
     - Testing
 - Create a new directory with your new application's name in your fork.
-  - Add, and organize your Argo CD gitops file(s) into it, if any.
+  - Add, and organize your Argo CD GitOps file(s) into it, if any.
 - Create a pull request with the changes from your branch to our main branch.
 
 ### Acceptance Criteria
