@@ -1,0 +1,56 @@
+---
+extends: substitution
+message: Consider using '%s' instead of '%s'
+ignorecase: false
+level: error
+swap:
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )argo [C|c][D|d](?=$| |\.)': Argo CD
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )Argo [C|c][D|d](?=$| |\.)': Argo CD
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )[A|a]rgo[C|c][D|d](?=$| |\.)': Argo CD
+  'argo [W|w]orkflows?': Argo Workflows
+  'Argo [W|w]orkflows?': Argo Workflows
+  atlantis: Atlantis
+  chartmuseum: ChartMuseum
+  cli: CLI
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )civo(?=$| |\.)': Civo
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )CIVO(?=$| |\.)': Civo
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )configs?(?=$| |\.)': configurations
+  cronjob: CronJob
+  ecr: ECR
+  eks: EKS
+  'digital[o|O]cean': DigitalOcean
+  '[d|D]igitalocean': DigitalOcean
+  docker: Docker
+  gcp: Google Cloud
+  gcp cloud: Google Cloud
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '[G|g]ithub': GitHub
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  'git[H|h]ub': GitHub
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )[G|g]itlab(?=$| |\.)': GitLab
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )git[L|l]ab(?=$| |\.)': GitLab
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )gitops(?=$| |\.)': GitOps for the term or put gitops as inline code for the repository
+  google: Google
+  helm: Helm
+  https: HTTPS
+  iam: IAM
+  kubernetes: Kubernetes
+  mongo: MongoDB
+  oidc: OIDC
+  repo: repository
+  SSH: SSH
+  # Starting or with a space before, and ending with a dot or space (so not working used in a path, caused of MDX)
+  '(?<=^| )terraform(?=$| |\.)': Terraform
+  ui: UI
+  url: URL
+  vpc: VPC
+  vultr: Vultr
