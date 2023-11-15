@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="img/kubefirst-light.svg" alt="Kubefirst Logo">
@@ -35,7 +36,7 @@ To make a new application available for installation, you'll need to:
     - Storage
     - Testing
 - Create a new directory with your new application's name in your fork.
-  - Add, and organize your Argo CD gitops file(s) into it, if any.
+  - Add, and organize your Argo CD GitOps file(s) into it, if any.
 - Create a pull request with the changes from your branch to our main branch.
 
 ### Acceptance Criteria
