@@ -12,8 +12,6 @@ The kubefirst GitOps Catalog repository is a community-driven series of cloud na
 
 ## Contributing
 
-
-
 To make a new application available for installation, you'll need to:
 
 - Fork this repository.
