@@ -47,7 +47,7 @@ We may remove an application from the GitOps Catalog with no notice if a severe 
 
 ### Testing
 
-If you want to test the application you are adding to the catalog, you need to run a couple of things locally.
+If you want to test the application you are adding to the catalog, you need to run a couple of things locally. The process is a bit complicated, so feel free to submit a pull request without all the local tests, and we'll happily do the testing for you. If you want to proceed by yourself, follow these steps.
 
 Firstly, if it's not already done, you need to [create a fork](https://github.com/kubefirst/kubefirst-api/fork) of the gitops-catalog repository.
 
@@ -73,4 +73,4 @@ If you already installed the application, to reinstall it another time without r
 
 ### Need Help
 
-As always, we are on our [Slack community](https://kubefirst.io/slack) in the #gitops-catalog channel  if you need any help. We also welcome any constructive feedback or feature suggestions.
+As always, we are on our [Slack community](https://kubefirst.io/slack) in the #gitops-catalog channel if you need any help. We also welcome any constructive feedback, feature or application suggestions.
