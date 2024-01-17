@@ -49,7 +49,7 @@ spec:
               cert-manager.io/cluster-issuer: "letsencrypt-prod"
             tls:
               enabled: true
-              secretName: gitlab-tls       
+              secretName: gitlab-tls
         gitlab:
           sidekiq:
             enabled: false
@@ -142,18 +142,18 @@ spec:
     template:
       engineVersion: v2
       templateFrom:
-      - configMap:
-          # name of the configmap to pull in
-          name: gitlab-vault-oidc-template
-          # here you define the keys that should be used as template
-          items:
-          - key: provider
+        - configMap:
+            # name of the configmap to pull in
+            name: gitlab-vault-oidc-template
+            # here you define the keys that should be used as template
+            items:
+              - key: provider
   data:
-  - secretKey: client_id
-    remoteRef:
-      key: /oidc/gitlab
-      property: client_id
-  - secretKey: client_secret
-    remoteRef:
-      key: /oidc/gitlab
-      property: client_secret
+    - secretKey: client_id
+      remoteRef:
+        key: /oidc/gitlab
+        property: client_id
+    - secretKey: client_secret
+      remoteRef:
+        key: /oidc/gitlab
+        property: client_secret
