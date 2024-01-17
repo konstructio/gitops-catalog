@@ -18,7 +18,7 @@ jobs:
 
       - name: Install Vale
         run: |
-          wget https://github.com/errata-ai/vale/releases/download/v${{ steps.lastversion.outputs.last_version }}/vale_${{ steps.lastversion.outputs.last_version }}_Linux_64-bit.tar.gz -O vale.tar.gz
+          wget https://github.com/errata-ai/vale/releases/download/v2.30.0/vale_2.30.0_Linux_64-bit.tar.gz -O vale.tar.gz
           tar -xvzf vale.tar.gz vale
           rm vale.tar.gz
 
