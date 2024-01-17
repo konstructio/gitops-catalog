@@ -29,6 +29,14 @@ apps:
     categories:
       - Observability
 
+  - name: gitlab
+    displayName: GitLab
+    website: "https://docs.gitlab.com/charts/installation/"
+    imageUrl: "https://images.ctfassets.net/xz1dnu24egyd/1IRkfXmxo8VP2RAE5jiS1Q/ea2086675d87911b0ce2d34c354b3711/gitlab-logo-500.png"
+    description: "GitLab Server - a complete devops solution that does it all, from project planning and source code management to CI/CD, monitoring, and security."
+    categories:
+      - CI/CD
+
   - name: goldilocks
     displayName: Goldilocks
     website: "https://github.com/FairwindsOps/goldilocks"
