@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="img/kubefirst-light.svg" alt="Kubefirst Logo">
@@ -20,7 +21,7 @@ To make a new application available for installation, you'll need to:
   - **website**: application website or GitHub repository.
   - **imageUrl**: full web URL for the application's logo. It will be displayed in the GitOps catalog. _For now, it needs to be located on a third-party server, but we'll update this field to grab them from the GitHub repository soon, so it doesn't depend on external URL._
   - **description**: an insightful description about your application. It will be displayed in the GitOps Catalog (200 characters maximum).
-  - **categories**: one category amongts the following ones:
+  - **categories**: one category amongst the following ones:
     - App management
     - Architecture
     - CI/CD
@@ -33,7 +34,7 @@ To make a new application available for installation, you'll need to:
     - Storage
     - Testing
 - Create a new directory with your new application's name in your fork.
-  - Add, and organize your Argo CD gitops file(s) into it, if any.
+  - Add, and organize your Argo CD GitOps file(s) into it, if any.
 - Create a pull request with the changes from your branch to our main branch.
 
 ### Acceptance Criteria
@@ -46,7 +47,7 @@ We may remove an application from the GitOps Catalog with no notice if a severe 
 
 ### Testing
 
-If you want to test the application you are adding to the catalog, you need to run a couple of things locally.
+If you want to test the application you are adding to the catalog, you need to run a couple of things locally. The process is a bit complicated, so feel free to submit a pull request without all the local tests, and we'll happily do the testing for you. If you want to proceed by yourself, follow these steps.
 
 Firstly, if it's not already done, you need to [create a fork](https://github.com/kubefirst/kubefirst-api/fork) of the gitops-catalog repository.
 
@@ -72,4 +73,4 @@ If you already installed the application, to reinstall it another time without r
 
 ### Need Help
 
-As always, we are on our [Slack community](https://kubefirst.io/slack) in the #gitops-catalog channel  if you need any help. We also welcome any constructive feedback or feature suggestions.
+As always, we are on our [Slack community](https://kubefirst.io/slack) in the #gitops-catalog channel if you need any help. We also welcome any constructive feedback, feature or application suggestions.
