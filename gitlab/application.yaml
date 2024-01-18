@@ -1,0 +1,159 @@
+---
+# note to the installing admin:
+# this app needs a couple prereq steps
+# 1. pull request and atlantis apply a new oidc client named gitlab so the secrets are available in vault
+# 2. adjust the helm.values.global.hosts.name name to attach it to your domain
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitlab
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: '10'
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gitlab
+  project: default
+  source:
+    repoURL: 'https://charts.gitlab.io'
+    targetRevision: 7.7.3
+    chart: gitlab
+    helm:
+      values: |-
+        global:
+          registry:
+              enabled: false
+          appConfig:
+            omniauth:
+              enabled: true
+              # autoSignInWithProvider: openid_connect
+              syncProfileFromProvider: true
+              syncProfileAttributes: [openid, email, profile]
+              allowSingleSignOn: [openid_connect]
+              autoLinkUser: true
+              providers:
+              - secret: gitlab-vault-oidc
+            defaultProjectsFeatures:
+              containerRegistry: false
+          hosts:
+            domain: <REPLACE WITH YOUR DOMAIN. FORMAT IS example.com - FORMAT IS NOT gitlab.example.com>
+          ingress:
+            configureCertmanager: false
+            provider: nginx
+            class: nginx
+            annotations:
+              kubernetes.io/tls-acme: true
+              cert-manager.io/cluster-issuer: "letsencrypt-prod"
+            tls:
+              enabled: true
+              secretName: gitlab-tls
+        gitlab:
+          sidekiq:
+            enabled: false
+            registry:
+              enabled: false
+          unicorn:
+            registry:
+              enabled: false
+          # https://docs.gitlab.com/charts/installation/command-line-options.html#tls-configuration
+          webservice:
+            registry:
+              enabled: false
+            ingress:
+              provider: nginx
+              class: nginx
+              annotations:
+                kubernetes.io/tls-acme: true
+                cert-manager.io/cluster-issuer: "letsencrypt-prod"
+              tls:
+                enabled: true
+                secretName: gitlab-webservice-tls
+        webservice:
+          registry:
+            enabled: false
+        certmanager-issuer:
+          email: alerts@kubefirst.io
+        upgradeCheck:
+          enabled: false
+        certmanager:
+          installCRDs: false
+          install: false
+        nginx-ingress:
+          enabled: false
+        registry:
+          enabled: false
+        # add on later
+        gitlab-runner:
+          install: false
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-vault-oidc-template
+  namespace: gitlab
+  annotations:
+    argocd.argoproj.io/sync-wave: "30"
+data:
+  provider: |
+    name: openid_connect
+    label: Vault
+    icon: https://www.pngitem.com/pimgs/m/329-3299659_hashicorp-vault-logo-hd-png-download.png
+    args:
+      name: openid_connect
+      scope:
+        - openid
+        - profile
+        - email
+        - groups
+      response_type: code
+      issuer: https://vault.gitops.biz/v1/identity/oidc/provider/kubefirst
+      client_auth_method: basic
+      discovery: true
+      uid_field: email
+      client_options:
+        identifier: "{{ .client_id }}"
+        secret: "{{ .client_secret }}"
+        redirect_uri: https://gitlab.gitops.biz/users/auth/openid_connect/callback
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: gitlab-vault-oidc-template
+  namespace: gitlab
+  annotations:
+    argocd.argoproj.io/sync-wave: "31"
+spec:
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: vault-kv-secret
+  target:
+    name: gitlab-vault-oidc
+    template:
+      engineVersion: v2
+      templateFrom:
+        - configMap:
+            # name of the configmap to pull in
+            name: gitlab-vault-oidc-template
+            # here you define the keys that should be used as template
+            items:
+              - key: provider
+  data:
+    - secretKey: client_id
+      remoteRef:
+        key: /oidc/gitlab
+        property: client_id
+    - secretKey: client_secret
+      remoteRef:
+        key: /oidc/gitlab
+        property: client_secret
