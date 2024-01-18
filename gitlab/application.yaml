@@ -21,6 +21,7 @@ spec:
   source:
     repoURL: 'https://charts.gitlab.io'
     targetRevision: 7.7.3
+    chart: gitlab
     helm:
       values: |-
         global:
@@ -88,7 +89,6 @@ spec:
         # add on later
         gitlab-runner:
           install: false
-    chart: gitlab
   syncPolicy:
     automated:
       prune: true
