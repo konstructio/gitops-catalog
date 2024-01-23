@@ -17,12 +17,12 @@ To make a new application available for installation, you'll need to:
 - Fork this repository.
 - Create a new directory with your new application's name in your fork.
   - Add, and organize your Argo CD GitOps file(s) into it, if any.
-  - Add a SVG file of the application's logo, named `logo.svg`. If you don't have a SVG file, PNG and JPEG are also accepted. The application logo will be displayed in the GitOps catalog at a size of 32x32 pixels.
+  - Add a SVG file of the application's logo, named `<appName>.svg` under the [logos folder](https://github.com/kubefirst/gitops-catalog/tree/main/logos) . If you don't have a SVG file, PNG and JPEG are also accepted. The application logo will be displayed in the GitOps catalog at a size of 32x32 pixels.
 - Add a new entry to the [index.yaml](index.yaml) file with:
   - **name**: application name as described in your YAML file.
   - **displayName**: name to be displayed in the GitOps catalog (120 characters maximum).
   - **website**: application website or GitHub repository.
-  - **imageUrl**: `https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/<name>/logo.<svg|png|jpeg|jpg>`
+  - **imageUrl**: `https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/<appName>.<svg|png|jpeg|jpg>`
   - **description**: an insightful description about your application. It will be displayed in the GitOps Catalog (200 characters maximum).
   - **categories**: one category amongst the following ones:
     - App management
