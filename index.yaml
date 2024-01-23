@@ -67,7 +67,7 @@ apps:
     secretKeys:
       - name: cluster-name
         label: Name of the management cluster
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/kubescape-operator/logo.svg"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubescape-operator.svg"
     description: "Kubescape is an open-source Kubernetes security platform for your IDE, CI/CD pipelines, and clusters. It includes risk analysis, security, compliance, and misconfiguration scanning."
     categories:
       - Security
