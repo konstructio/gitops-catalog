@@ -1,9 +1,10 @@
 ---
-# note to the installing admin:
-# this app needs a couple prereq steps
-# 1. pull request and atlantis apply a new oidc client named gitlab so the secrets are available in vault
-# 2. adjust the helm.values.global.hosts.name name to attach it to your domain
-
+# Note for the installation
+#
+# This application needs a couple prerequisites steps:
+#   1. A pull request and Atlantis apply to a new OIDC client named GitLab, so the secrets are available in Vault.
+#   2. Adjust the spec.source.helm.values.global.hosts.domain value to your domain.
+#
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
