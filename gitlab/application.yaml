@@ -2,10 +2,9 @@
 # Note for the installation
 #
 # This application needs 2 adjustments to work:
-#   1. Create a pull request to add a new OIDC client named GitLab, so the secrets are available in Vault.
-
-#   in your `gitops` repo, add the following content to the file `/terraform/vault/oidc-clients.tf`.
-#   be sure to uncomment and also change <YOUR_DOMAIN> to your actual domain (eg. example.com):
+#   Adjustment 1: Create a pull request to add a new OIDC client for GitLab to use, so the OIDC secrets are
+#   are available in Vault. In your `gitops` repo, add the following block to the file `/terraform/vault/oidc-clients.tf`.
+#   Be sure to uncomment the block's content and also change <YOUR_DOMAIN> to your actual domain (eg. example.com):
 ###################################################################################################
 # module "gitlab" {
 #   source = "./modules/oidc-client"
@@ -24,7 +23,7 @@
 # }
 ###################################################################################################
 
-#   2. Adjust the 3 instances of <DOMAIN_NAME> below with your domain name (eg. example.com)
+#   2. Once the above has been atlantis applied, adjust the 3 instances of <DOMAIN_NAME> below with your domain name (eg. example.com) and commit the change to the main branch
 #
 apiVersion: argoproj.io/v1alpha1
 kind: Application
