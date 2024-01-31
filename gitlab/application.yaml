@@ -9,11 +9,11 @@
 ###################################################################################################
 # module "gitlab" {
 #   source = "./modules/oidc-client"
-# 
+#
 #   depends_on = [
 #     vault_identity_oidc_provider.kubefirst
 #   ]
-# 
+#
 #   app_name               = "gitlab"
 #   identity_group_ids     = [vault_identity_group.admins.id, vault_identity_group.developers.id]
 #   oidc_provider_key_name = vault_identity_oidc_key.key.name
@@ -34,7 +34,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: '10'
+    argocd.argoproj.io/sync-wave: '30'
 spec:
   destination:
     server: https://kubernetes.default.svc
@@ -125,7 +125,7 @@ metadata:
   name: gitlab-vault-oidc-template
   namespace: gitlab
   annotations:
-    argocd.argoproj.io/sync-wave: "30"
+    argocd.argoproj.io/sync-wave: "10"
 data:
   provider: |
     name: openid_connect
@@ -154,7 +154,7 @@ metadata:
   name: gitlab-vault-oidc-template
   namespace: gitlab
   annotations:
-    argocd.argoproj.io/sync-wave: "31"
+    argocd.argoproj.io/sync-wave: "11"
 spec:
   secretStoreRef:
     kind: ClusterSecretStore
