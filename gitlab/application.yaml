@@ -1,9 +1,30 @@
 ---
 # Note for the installation
 #
-# This application needs a couple prerequisites steps:
-#   1. A pull request and Atlantis apply to a new OIDC client named GitLab, so the secrets are available in Vault.
-#   2. Adjust the spec.source.helm.values.global.hosts.domain value to your domain.
+# This application needs 2 adjustments to work:
+#   1. Create a pull request to add a new OIDC client named GitLab, so the secrets are available in Vault.
+
+#   in your `gitops` repo, add the following content to the file `/terraform/vault/oidc-clients.tf`.
+#   be sure to uncomment and also change <YOUR_DOMAIN> to your actual domain (eg. example.com):
+###################################################################################################
+# module "gitlab" {
+#   source = "./modules/oidc-client"
+# 
+#   depends_on = [
+#     vault_identity_oidc_provider.kubefirst
+#   ]
+# 
+#   app_name               = "gitlab"
+#   identity_group_ids     = [vault_identity_group.admins.id, vault_identity_group.developers.id]
+#   oidc_provider_key_name = vault_identity_oidc_key.key.name
+#   redirect_uris = [
+#     "https://gitlab.<YOUR_DOMAIN>/users/auth/openid_connect/callback",
+#   ]
+#   secret_mount_path = "secret"
+# }
+###################################################################################################
+
+#   2. Adjust the 3 instances of <DOMAIN_NAME> below with your domain name (eg. example.com)
 #
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -27,7 +48,7 @@ spec:
       values: |-
         global:
           registry:
-              enabled: false
+            enabled: false
           appConfig:
             omniauth:
               enabled: true
@@ -41,7 +62,7 @@ spec:
             defaultProjectsFeatures:
               containerRegistry: false
           hosts:
-            domain: <REPLACE WITH YOUR DOMAIN. FORMAT IS example.com - FORMAT IS NOT gitlab.example.com>
+            domain: <DOMAIN_NAME>
           ingress:
             configureCertmanager: false
             provider: nginx
@@ -118,14 +139,14 @@ data:
         - email
         - groups
       response_type: code
-      issuer: https://vault.gitops.biz/v1/identity/oidc/provider/kubefirst
+      issuer: https://vault.<DOMAIN_NAME>/v1/identity/oidc/provider/kubefirst
       client_auth_method: basic
       discovery: true
       uid_field: email
       client_options:
         identifier: "{{ .client_id }}"
         secret: "{{ .client_secret }}"
-        redirect_uri: https://gitlab.gitops.biz/users/auth/openid_connect/callback
+        redirect_uri: https://gitlab.<DOMAIN_NAME>/users/auth/openid_connect/callback
 ---
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
