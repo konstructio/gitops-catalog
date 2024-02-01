@@ -37,6 +37,14 @@ apps:
     categories:
       - CI/CD
 
+  - name: flappy-kray
+    displayName: Flappy K-Ray
+    website: "https://kray.kubefirst.io"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/flappy-kray.png"
+    description: "Flappy K-Ray is an adaptation of the popular Flappy Bird game where Kubefirst's mascot K-Ray navigates an endless maze of GitOps pipelines."
+    categories:
+      - CI/CD
+
   - name: goldilocks
     displayName: Goldilocks
     website: "https://github.com/FairwindsOps/goldilocks"
