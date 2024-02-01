@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -40,17 +41,17 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: flappy-kray.<DOMAIN_NAME>
-    http:
-      paths:
-      - backend:
-          service:
-            name: flappy-kray
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
+    - host: flappy-kray.<DOMAIN_NAME>
+      http:
+        paths:
+          - backend:
+              service:
+                name: flappy-kray
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
   tls:
-  - hosts:
-    - flappy-kray.<DOMAIN_NAME>
-    secretName: flappy-kray-tls
+    - hosts:
+        - flappy-kray.<DOMAIN_NAME>
+      secretName: flappy-kray-tls
