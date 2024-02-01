@@ -1,0 +1,57 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flappy-kray
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: '0'
+spec:
+  destination:
+    namespace: kubefirst
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: 'https://charts.kubefirst.com'
+    targetRevision: 0.1.0
+    chart: flappy-kray
+    helm:
+      values: |
+        image:
+          repository: public.ecr.aws/kubefirst/flappy-kray
+        ingress:
+          enabled: false
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    argocd.argoproj.io/sync-wave: '1'
+  name: flappy-kray
+  namespace: kubefirst
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: flappy-kray.<DOMAIN_NAME>
+      http:
+        paths:
+          - backend:
+              service:
+                name: flappy-kray
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - flappy-kray.<DOMAIN_NAME>
+      secretName: flappy-kray-tls
