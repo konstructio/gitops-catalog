@@ -74,9 +74,6 @@ apps:
     website: "https://github.com/kubescape/kubescape/"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubescape-operator.svg"
     description: "Kubescape is an open-source Kubernetes security platform for your IDE, CI/CD pipelines, and clusters. It includes risk analysis, security, compliance, and misconfiguration scanning."
-    configKeys:
-      - name: CLUSTER_NAME
-        label: Cluster name
     categories:
       - Security
 
