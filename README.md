@@ -45,7 +45,7 @@ We will approve all GitOps Catalog application submissions as long as they are w
 
 ### Kubefirst Tokens
 
-Any GitOps Catalog application can use the following tokens in their application's YAML so they can be replacde with the provisioned cluster information:
+Any GitOps Catalog application can use the following tokens in their application's YAML so they can be replaced with the provisioned cluster information:
 
 | Token                                             | Description                                                                                                                      |
 |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
