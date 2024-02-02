@@ -112,7 +112,6 @@ Any GitOps Catalog app can use the following tokens in their apps so they can be
 | `WORKLOAD_CLUSTER_BOOTSTRAP_TERRAFORM_MODULE_URL` | The URL of the Terraform module used for bootstrapping workload clusters. |
 | `WORKLOAD_CLUSTER_TERRAFORM_MODULE_URL`     | The URL of the Terraform module used for deploying workload clusters. |
 
-
 ### Application Maintenance and Removal
 
 We may remove an application from the GitOps Catalog with no notice if a severe vulnerability is discovered. Another reason for removing an application is if an application becomes abandoned or unmaintained by the upstream project.
