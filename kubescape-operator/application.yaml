@@ -14,7 +14,7 @@ spec:
     chart: kubescape-operator
     helm:
       values: |
-        clusterName: CLUSTER_NAME
+        clusterName: <CLUSTER_NAME>
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kubescape
