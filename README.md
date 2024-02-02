@@ -30,7 +30,6 @@ To make a new application available for installation, you'll need to:
     - CI/CD
     - Database
     - FinOps
-    - Games
     - Infrastructure
     - Monitoring
     - Observability
@@ -42,6 +41,77 @@ To make a new application available for installation, you'll need to:
 ### Acceptance Criteria
 
 We will approve all GitOps Catalog application submissions as long as they are working with the latest version of kubefirst.
+
+### Kubefirst Tokens
+
+Any GitOps Catalog app can use the following tokens in their apps so they can be replace with the provisioned cluster information:
+
+| Token                                       | Description |
+|---------------------------------------------|-------------|
+| `ARGOCD_INGRESS_NO_HTTP_URL`                | The non-HTTP URL for accessing the Argo CD UI, typically for secure access. |
+| `ARGOCD_INGRESS_URL`                        | The URL for accessing the Argo CD UI via ingress. |
+| `ARGO_WORKFLOWS_INGRESS_NO_HTTPS_URL`       | The non-HTTPS URL for accessing the Argo Workflows UI, for secure access. |
+| `ARGO_WORKFLOWS_INGRESS_URL`                | The URL for accessing the Argo Workflows UI via ingress. |
+| `ATLANTIS_ALLOW_LIST`                       | A list of allowed entities for Atlantis operations, specifying who can interact with Atlantis within the configured environment. |
+| `ATLANTIS_INGRESS_NO_HTTPS_URL`             | The non-HTTPS URL for accessing the Atlantis UI, for secure access. |
+| `ATLANTIS_INGRESS_URL`                      | The URL for accessing the Atlantis UI via ingress. |
+| `AWS_NODE_CAPACITY_TYPE`                    | Indicates the capacity type of AWS nodes, such as on-demand or spot instances. |
+| `CERT_MANAGER_ISSUER_ANNOTATION_1`          | An annotation for cert-manager to specify the issuer for the first set of certificates. |
+| `CERT_MANAGER_ISSUER_ANNOTATION_2`          | An annotation for cert-manager to specify the issuer for the second set of certificates. |
+| `CERT_MANAGER_ISSUER_ANNOTATION_3`          | An annotation for cert-manager to specify the issuer for the third set of certificates. |
+| `CERT_MANAGER_ISSUER_ANNOTATION_4`          | An annotation for cert-manager to specify the issuer for the fourth set of certificates. |
+| `CHARTMUSEUM_INGRESS_URL`                   | The URL for accessing the ChartMuseum UI via ingress. |
+| `CLOUD_PROVIDER`                            | The cloud service provider where the cluster is hosted, such as AWS, GCP, or Azure. |
+| `CLOUD_REGION`                              | The geographical region of the cloud provider where the cluster is deployed. |
+| `CLUSTER_ID`                                | A unique identifier for the cluster, assigned by the cloud provider or the management system. |
+| `CLUSTER_NAME`                              | The name of the Kubernetes cluster, used to identify it within the cloud provider or the local environment. |
+| `CLUSTER_TYPE`                              | The type of the cluster, indicating whether it is a production, development, or testing cluster. |
+| `CONTAINER_REGISTRY_URL`                    | The URL of the container registry where container images are stored and retrieved. |
+| `DOMAIN_NAME`                               | The domain name associated with the cluster or its services. |
+| `EXTERNAL_DNS_DOMAIN_NAME`                  | The domain name managed by the external DNS provider. |
+| `EXTERNAL_DNS_PROVIDER_NAME`                | The name of the external DNS provider, such as Cloudflare or Route53. |
+| `EXTERNAL_DNS_PROVIDER_SECRET_KEY`          | The key within the Kubernetes secret that stores the external DNS provider's credentials. |
+| `EXTERNAL_DNS_PROVIDER_SECRET_NAME`         | The name of the Kubernetes secret storing the external DNS provider's credentials. |
+| `EXTERNAL_DNS_PROVIDER_TOKEN_ENV_NAME`      | The environment variable name holding the token for the external DNS provider. |
+| `GIT_DESCRIPTION`                           | A description of the Git repository. |
+| `GIT_FQDN`                                  | The Fully Qualified Domain Name associated with the Git service. |
+| `GIT_NAMESPACE`                             | The namespace within the Git provider where the repository resides. |
+| `GIT_PROVIDER`                              | The platform or service hosting the Git repository, e.g., GitHub, GitLab. |
+| `GIT_RUNNER`                                | The runner used for executing Git CI/CD pipelines. |
+| `GIT_RUNNER_DESCRIPTION`                    | A description of the Git runner. |
+| `GIT_RUNNER_NS`                             | The namespace where the Git runner is deployed. |
+| `GIT_URL`                                   | The URL of the Git repository. |
+| `GITHUB_HOST`                               | The hostname of the GitHub instance, for GitHub Enterprise users. |
+| `GITHUB_OWNER`                              | The owner of the GitHub repository, which can be a user or organization. |
+| `GITHUB_USER`                               | The GitHub username associated with the deployment. |
+| `GITLAB_HOST`                               | The hostname of the GitLab instance, for GitLab self-hosted users. |
+| `GITLAB_OWNER`                              | The owner of the GitLab repository, which can be a user or group. |
+| `GITLAB_OWNER_GROUP_ID`                     | The group ID of the GitLab repository owner, if applicable. |
+| `GITLAB_USER`                               | The GitLab username associated with the deployment. |
+| `GITOPS_REPO_ATLANTIS_WEBHOOK_URL`          | The URL for the Atlantis webhook associated with the GitOps repository. |
+| `GITOPS_REPO_GIT_URL`                       | The Git URL of the repository used for GitOps. |
+| `GITOPS_REPO_NO_HTTPS_URL`                  | The non-HTTPS URL of the GitOps repository. |
+| `GITOPS_REPO_URL`                           | The URL of the repository used for GitOps operations. |
+| `GOOGLE_PROJECT`                            | The Google Cloud project ID where the resources are deployed. |
+| `GOOGLE_UNIQUENESS`                         | A token to ensure uniqueness of resource names in Google Cloud deployments. |
+| `KUBEFIRST_ARTIFACTS_BUCKET`                | The cloud storage bucket used for storing artifacts related to Kubefirst deployments. |
+| `KUBEFIRST_STATE_STORE_BUCKET`              | The cloud storage bucket used for storing the state of Kubefirst deployments. |
+| `KUBEFIRST_STATE_STORE_BUCKET_HOSTNAME`     | The hostname of the cloud storage bucket used for storing Kubefirst deployment state. |
+| `KUBEFIRST_VERSION`                         | The version of the Kubefirst platform being used. |
+| `METAPHOR_DEVELOPMENT_INGRESS_URL`          | The ingress URL for accessing the development environment of the Metaphor application. |
+| `METAPHOR_PRODUCTION_INGRESS_URL`           | The ingress URL for accessing the production environment of the Metaphor application. |
+| `METAPHOR_STAGING_INGRESS_URL`              | The ingress URL for accessing the staging environment of the Metaphor application. |
+| `NODE_COUNT`                                | The number of nodes within the cluster. |
+| `NODE_TYPE`                                 | The type of node within the cluster, such as compute, memory-optimized, etc. |
+| `TERRAFORM_FORCE_DESTROY`                   | A flag indicating whether Terraform should force the destruction of resources during teardown. |
+| `USE_TELEMETRY`                             | A flag indicating whether telemetry data should be collected and sent. |
+| `VAULT_DATA_BUCKET`                         | The cloud storage bucket used for storing Vault data. |
+| `VAULT_INGRESS_NO_HTTPS_URL`                | The non-HTTPS URL for accessing the Vault UI, for secure access. |
+| `VAULT_INGRESS_URL`                         | The URL for accessing the Vault UI via ingress. |
+| `VOUCH_INGRESS_URL`                         | The URL for accessing the Vouch proxy via ingress. |
+| `WORKLOAD_CLUSTER_BOOTSTRAP_TERRAFORM_MODULE_URL` | The URL of the Terraform module used for bootstrapping workload clusters. |
+| `WORKLOAD_CLUSTER_TERRAFORM_MODULE_URL`     | The URL of the Terraform module used for deploying workload clusters. |
+
 
 ### Application Maintenance and Removal
 
