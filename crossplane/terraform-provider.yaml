@@ -1,3 +1,4 @@
+---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
@@ -13,4 +14,3 @@ spec:
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1
   skipDependencyResolution: false
- 
