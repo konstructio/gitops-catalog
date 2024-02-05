@@ -1,0 +1,79 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: minio-create-kratix-bucket
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
+spec:
+  template:
+    spec:
+      serviceAccountName: minio-create-kratix-bucket
+      initContainers:
+        - name: wait-for-minio
+          image: bitnami/kubectl:1.20.10
+          command:
+            [
+              "sh",
+              "-c",
+              "kubectl wait --for=condition=Complete --timeout=120s -n minio job -l job-name=wait-minio-buckets",
+            ]
+      containers:
+        - name: minio-event-configuration
+          image: minio/mc:RELEASE.2023-06-06T13-48-56Z
+          command: ["mc", "mb", "--ignore-existing", "minio/kratix"]
+          env:
+            - name: MC_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: default-bucket-secret
+                  key: accessKeyID
+            - name: MC_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: default-bucket-secret
+                  key: secretAccessKey
+            - name: MC_ENDPOINT
+              value: minio.minio.svc.cluster.local:9000
+            - name: MC_HOST_minio
+              value: "http://$(MC_ACCESS_KEY):$(MC_SECRET_KEY)@$(MC_ENDPOINT)"
+      restartPolicy: Never
+  backoffLimit: 4
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: minio-create-kratix-bucket
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+rules:
+  - apiGroups:
+      - "batch"
+    resources:
+      - jobs
+    verbs:
+      - get
+      - list
+      - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: minio-create-kratix-bucket
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: minio-create-kratix-bucket
+subjects:
+  - kind: ServiceAccount
+    name: minio-create-kratix-bucket
+    namespace: kratix-platform-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: minio-create-kratix-bucket
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
