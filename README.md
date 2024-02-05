@@ -30,7 +30,7 @@ To make a new application available for installation, you'll need to:
     - CI/CD
     - Database
     - FinOps
-    - Games
+    - Gaming
     - Infrastructure
     - Monitoring
     - Observability
