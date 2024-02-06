@@ -38,7 +38,7 @@ spec:
           namespace: kratix-platform-system
           secretRef:
             name: default-git-secret
-          url: "https://<GITHUB_HOST>/<GITHUB_OWNER>/gitops"
+          url: "<GITHUB_HOST>"
           path: kratix
   destination:
     server: "https://kubernetes.default.svc"
