@@ -3,6 +3,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: minio-create-kratix-bucket
+  namespace: kratix-platform-system
   annotations:
     argocd.argoproj.io/sync-wave: "100"
 spec:
@@ -75,5 +76,6 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: minio-create-kratix-bucket
+  namespace: kratix-platform-system
   annotations:
     argocd.argoproj.io/sync-wave: "10"
