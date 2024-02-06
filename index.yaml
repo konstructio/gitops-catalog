@@ -16,14 +16,6 @@ apps:
     categories:
       - CI/CD
 
-  - name: crossplane
-    displayName: Crossplane (k3d add-on)
-    website: "https://github.com/argoproj/argo-rollouts"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/crossplane.svg"
-    description: "Crossplane is an open source, CNCF project built on the foundation of Kubernetes to orchestrate anything. It's natively on cloud versions of kubefirst, but can be added to the k3d platform with this registration."
-    categories:
-      - Infrastructure
-
   - name: datadog-agent
     displayName: Datadog
     website: "https://github.com/DataDog/datadog-agent"
