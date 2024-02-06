@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "git@<GITHUB_HOST>:<GITHUB_OWNER>/gitops.git"
+    repoURL: "git@github.com:<GITHUB_OWNER>/gitops.git"
     path: kratix/platform/dependencies
     targetRevision: HEAD
     directory:
@@ -33,7 +33,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "git@<GITHUB_HOST>:<GITHUB_OWNER>/gitops.git"
+    repoURL: "git@github.com:<GITHUB_OWNER>/gitops.git"
     path: kratix/platform/resources
     targetRevision: HEAD
     directory:
