@@ -7,7 +7,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: <GITOPS_REPO_GIT_URL>
+    repoURL: <GITOPS_REPO_URL>
     path: kratix/platform/dependencies
     targetRevision: HEAD
     directory:
@@ -33,7 +33,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: <GITOPS_REPO_GIT_URL>
+    repoURL: <GITOPS_REPO_URL>
     path: kratix/platform/resources
     targetRevision: HEAD
     directory:
