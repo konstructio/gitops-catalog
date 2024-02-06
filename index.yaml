@@ -85,6 +85,14 @@ apps:
     categories:
       - Security
 
+  - name: mysql
+    displayName: MySQL
+    website: "https://www.mysql.com/"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/mysql.svg"
+    description: "MySQL is an open source SQL database server."
+    categories:
+      - App Management
+
   - name: opencost
     displayName: OpenCost
     website: "https://github.com/opencost/opencost"
