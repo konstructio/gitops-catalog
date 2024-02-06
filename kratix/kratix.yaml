@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: <GITOPS_REPO_URL>
-    path: <REGISTRY_PATH>/components/katrix
+    path: <REGISTRY_PATH>/components/kratix
     targetRevision: HEAD
   destination:
     name: in-cluster
