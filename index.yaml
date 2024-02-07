@@ -5,16 +5,14 @@ apps:
     website: "https://github.com/argoproj/argo-events"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-events.png"
     description: "Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc. on events from a variety of sources."
-    categories:
-      - CI/CD
+    category: CI/CD
 
   - name: argo-rollouts
     displayName: Argo Rollouts
     website: "https://github.com/argoproj/argo-rollouts"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-rollouts.png"
     description: "A Kubernetes controller & set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, & progressive delivery features to Kubernetes."
-    categories:
-      - CI/CD
+    category: CI/CD
 
   - name: datadog-agent
     displayName: Datadog
@@ -26,64 +24,56 @@ apps:
         label: Datadog application key
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/datadog-agent.png"
     description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can main/logostain and optimize your cloud or hybrid environments."
-    categories:
-      - Observability
+    category: Observability
 
   - name: flappy-kray
     displayName: Flappy K-Ray
     website: "https://kray.kubefirst.io"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/flappy-kray.png"
     description: "Flappy K-Ray is an adaptation of the popular Flappy Bird game where Kubefirst's mascot K-Ray navigates an endless maze of GitOps pipelines."
-    categories:
-      - Gaming
+    category: End user application
 
   - name: gitlab
     displayName: GitLab
     website: "https://docs.gitlab.com/charts/installation/"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/gitlab.png"
     description: "GitLab Server - a complete devops solution that does it all, from project planning and source code management to CI/CD, monitoring, and security."
-    categories:
-      - CI/CD
+    category: CI/CD
 
   - name: goldilocks
     displayName: Goldilocks
     website: "https://github.com/FairwindsOps/goldilocks"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/goldilocks.svg"
     description: "Goldilocks is a utility that can help you identify a starting point for resource requests and limits."
-    categories:
-      - Monitoring
+    category: Monitoring
 
   - name: kratix
     displayName: Kratix
     website: "https://github.com/syntasso/kratix"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kratix.svg"
     description: "Kratix is an open-source platform framework that combines the flexibility and customisability of building your own platform from scratch with the on-demand and self-service power of public clouds."
-    categories:
-      - App Management
+    category: App Management
 
   - name: kubernetes-dashboard
     displayName: Kubernetes Dashboard
     website: "https://github.com/kubernetes/dashboard"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubernetes-dashboard.svg"
     description: "Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage apps running in the cluster & troubleshoot them, as well as manage the cluster itself."
-    categories:
-      - Observability
+    category: Observability
 
   - name: kubescape-operator
     displayName: Kubescape Operator
     website: "https://github.com/kubescape/kubescape/"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubescape-operator.svg"
     description: "Kubescape is an open-source Kubernetes security platform for your IDE, CI/CD pipelines, and clusters. It includes risk analysis, security, compliance, and misconfiguration scanning."
-    categories:
-      - Security
+    category: Security
 
   - name: kyverno
     displayName: Kyverno
     website: "https://github.com/kyverno/kyverno"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kyverno.png"
     description: "Kyverno is a policy engine designed for Kubernetes. Kyverno Policies are managed as Kubernetes resources and no new language is required to write policies."
-    categories:
-      - Security
+    category: Security
 
   - name: mysql
     displayName: MySQL
@@ -98,24 +88,21 @@ apps:
     website: "https://github.com/opencost/opencost"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/opencost.png"
     description: "OpenCost is a vendor-neutral open source project for measuring and allocating infrastructure and container costs in real time."
-    categories:
-      - FinOps
+    category: FinOps
 
   - name: polaris
     displayName: Polaris
     website: "https://github.com/FairwindsOps/polaris"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/polaris.png"
     description: "Polaris is an open source policy engine for Kubernetes."
-    categories:
-      - Security
+    category: Security
 
   - name: testkube
     displayName: Testkube
     website: "https://github.com/kubeshop/testkube"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/testkube.svg"
     description: "Testkube is a Kubernetes-native testing framework that allows you to automate the executions of your existing testing tools inside your Kubernetes cluster."
-    categories:
-      - Testing
+    category: Testing
     secretKeys:
       - name: API_KEY
         label: Testkube API Key
@@ -129,5 +116,4 @@ apps:
     website: "https://github.com/kubeshop/tracetest"
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/tracetest.svg"
     description: "Tracetest uses your existing OpenTelemetry traces to power trace-based testing with assertions against your trace data at every point of the request transaction."
-    categories:
-      - Testing
+    category: Testing

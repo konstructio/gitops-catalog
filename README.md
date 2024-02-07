@@ -24,14 +24,15 @@ To make a new application available for installation, you'll need to:
   - **website**: application website or GitHub repository.
   - **imageUrl**: `https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/<appName>.<svg|png|jpeg|jpg>`
   - **description**: an insightful description about your application. It will be displayed in the GitOps Catalog (200 characters maximum).
-  - **categories**: one category amongst the following ones:
+  - **category**: one category amongst the following ones:
     - App management
     - Architecture
     - CI/CD
     - Database
+    - End user application
     - FinOps
-    - Gaming
     - Infrastructure
+    - Miscellaneous
     - Monitoring
     - Observability
     - Security
