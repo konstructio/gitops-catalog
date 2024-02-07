@@ -91,7 +91,7 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/mysql.svg"
     description: "MySQL is an open source SQL database server."
     categories:
-      - App Management
+      - Database
 
   - name: opencost
     displayName: OpenCost
