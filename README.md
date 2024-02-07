@@ -29,9 +29,10 @@ To make a new application available for installation, you'll need to:
     - Architecture
     - CI/CD
     - Database
+    - End user application
     - FinOps
-    - Gaming
     - Infrastructure
+    - Miscellaneous
     - Monitoring
     - Observability
     - Security
