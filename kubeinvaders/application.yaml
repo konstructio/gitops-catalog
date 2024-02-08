@@ -20,6 +20,9 @@ spec:
       values: |
         config:
           target_namespace: "development"
+        deployment:
+          image:
+            tag: v1.9.6
         route_host: "kubeinvaders.<DOMAIN_NAME>"
   syncPolicy:
     automated:
