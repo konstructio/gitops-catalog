@@ -20,8 +20,10 @@ apps:
     secretKeys:
       - name: api-key
         label: Datadog API key
+        env: DATADOG_API_KEY
       - name: app-key
         label: Datadog application key
+        env: DATADOG_APP_KEY
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/datadog-agent.png"
     description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can main/logostain and optimize your cloud or hybrid environments."
     category: Observability
@@ -112,11 +114,13 @@ apps:
     secretKeys:
       - name: API_KEY
         label: Testkube API Key
+        env: TESTKUBE_APP_KEY
       - name: ORG_ID
         label: Testkube Org ID
+        env: TESTKUBE_ORG_ID
       - name: ENV_ID
         label: Testkube Environment ID
-
+        env: TESTKUBE_ENV_ID
   - name: tracetest
     displayName: Tracetest
     website: "https://github.com/kubeshop/tracetest"
