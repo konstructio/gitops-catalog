@@ -56,6 +56,13 @@ apps:
     description: "Kratix is an open-source platform framework that combines the flexibility and customisability of building your own platform from scratch with the on-demand and self-service power of public clouds."
     category: App Management
 
+  - name: kubedoom
+    displayName: Kube DOOM
+    website: "https://github.com/storax/kubedoom"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubedoom.png"
+    description: "Kill Kubernetes pods by playing Id's DOOM!s"
+    category: Testing
+
   - name: kubeinvaders
     displayName: KubeInvaders
     website: "https://github.com/lucky-sideburn/KubeInvaders"
