@@ -20,9 +20,9 @@ spec:
       values: |
         yourls:
           domain: yourls.<DOMAIN_NAME>
-      ### Uncomment and set username & password (in the future, will should be added as secrets and not clearly inside the YAML)
-          #username: NEED-TO-BE-SET
-          #password: NEED-TO-BE-SET
+      ### Uncomment, move at the same level as `domain` and set the username & password (in the future, it will be added as secrets and not as clear values inside the YAML)
+      # username: NEED-TO-BE-SET
+      # password: NEED-TO-BE-SET
   syncPolicy:
     automated:
       prune: true
