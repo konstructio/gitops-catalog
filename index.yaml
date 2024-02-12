@@ -134,3 +134,10 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/tracetest.svg"
     description: "Tracetest uses your existing OpenTelemetry traces to power trace-based testing with assertions against your trace data at every point of the request transaction."
     category: Testing
+
+  - name: yourls
+    displayName: YOURLS
+    website: "https://github.com/YOURLS/YOURLS"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/yourls.svg"
+    description: "Self hosted URL shortener."
+    category: End user application

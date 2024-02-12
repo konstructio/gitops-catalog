@@ -1,0 +1,57 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: yourls
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: yourls
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: yourls
+    repoURL: https://charts.yourls.org
+    targetRevision: 5.7.5
+    helm:
+      releaseName: yourls
+      values: |
+        yourls:
+          domain: yourls.<DOMAIN_NAME>
+      ### Uncomment and set username & password (in the future, will should be added as secrets and not clearly inside the YAML)
+          #username: NEED-TO-BE-SET
+          #password: NEED-TO-BE-SET
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    argocd.argoproj.io/sync-wave: '1'
+  name: yourls
+  namespace: yourls
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: yourls.<DOMAIN_NAME>
+      http:
+        paths:
+          - backend:
+              service:
+                name: yourls
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - yourls.<DOMAIN_NAME>
+      secretName: yourls-tls
