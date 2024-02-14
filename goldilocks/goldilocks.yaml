@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: opencost-components
+  name: goldilocks-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
@@ -10,11 +10,11 @@ spec:
   project: default
   source:
     repoURL: <GITOPS_REPO_URL>
-    path: <REGISTRY_PATH>/components/opencost
+    path: <REGISTRY_PATH>/components/goldilocks
     targetRevision: HEAD
   destination:
     name: in-cluster
-    namespace: opencost
+    namespace: goldilocks
   syncPolicy:
     automated:
       prune: true
