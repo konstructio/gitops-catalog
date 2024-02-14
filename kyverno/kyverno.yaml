@@ -2,28 +2,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kyverno
+  name: kyverno-components
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: '10'
 spec:
-  destination:
-    namespace: kyverno
-    server: https://kubernetes.default.svc
   project: default
   source:
-    chart: kyverno
-    repoURL: https://kyverno.github.io/kyverno
-    targetRevision: v3.0.4
-    helm:
-      releaseName: kyverno
-      # values: |
-      #   example: value
+    repoURL: <GITOPS_REPO_URL>
+    path: <REGISTRY_PATH>/components/kyverno
+    targetRevision: HEAD
+  destination:
+    name: in-cluster
+    namespace: kyverno
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      # https://kyverno.io/docs/installation/platform-notes/#notes-for-argocd-users
-      - Replace=true
