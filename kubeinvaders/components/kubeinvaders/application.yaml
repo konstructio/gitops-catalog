@@ -8,9 +8,9 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: kubeinvaders
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+    namespace: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: kubeinvaders
     repoURL: https://lucky-sideburn.github.io/helm-charts/
@@ -38,7 +38,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
   name: kubeinvaders
-  namespace: kubeinvaders
+  namespace: argocd
 spec:
   ingressClassName: nginx
   rules:

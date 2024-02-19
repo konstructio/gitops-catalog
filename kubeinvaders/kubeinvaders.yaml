@@ -5,16 +5,16 @@ metadata:
   name: kubeinvaders-components
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: '10'
+    argocd.argoproj.io/sync-wave: '100'
 spec:
-  project: <PROJECT>
+  project: default
   source:
     repoURL: <GITOPS_REPO_URL>
     path: <REGISTRY_PATH>/components/kubeinvaders
     targetRevision: HEAD
   destination:
-    name: <CLUSTER_DESTINATION>
-    namespace: kubeinvaders
+    name: in-cluster
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
