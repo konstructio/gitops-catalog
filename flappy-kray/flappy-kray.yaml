@@ -7,13 +7,13 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: <GITOPS_REPO_URL>
     path: <REGISTRY_PATH>/components/flappy-kray
     targetRevision: HEAD
   destination:
-    name: in-cluster
+    name: <CLUSTER_DESTINATION>
     namespace: flappy-kray
   syncPolicy:
     automated:
