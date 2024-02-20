@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: flappy-kray
+  name: <CLUSTER_NAME>-flappy-kray
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

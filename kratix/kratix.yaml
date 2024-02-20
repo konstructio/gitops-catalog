@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kratix-components
+  name: <CLUSTER_NAME>-kratix-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'

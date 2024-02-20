@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-rollouts
+  name: <CLUSTER_NAME>-argo-rollouts
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

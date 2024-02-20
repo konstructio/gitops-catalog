@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: polaris
+  name: <CLUSTER_NAME>-polaris
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'

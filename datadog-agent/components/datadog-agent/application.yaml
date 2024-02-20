@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: datadog
+  name: <CLUSTER_NAME>-datadog
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -19,7 +19,7 @@ spec:
       releaseName: datadog
       values: |
         datadog:
-          apiKeyExistingSecret: datadog-secret
+          apiKeyExistingSecret: <CLUSTER_NAME>-datadog-secret
           clusterName: "<CLUSTER_NAME>"
           env:
           - name: DD_ENV

@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard-components
+  name: <CLUSTER_NAME>-kubernetes-dashboard-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
