@@ -7,7 +7,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: 'https://kubescape.github.io/helm-charts/'
     targetRevision: 1.17.3

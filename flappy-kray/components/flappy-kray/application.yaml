@@ -22,7 +22,7 @@ spec:
           repository: public.ecr.aws/kubefirst/flappy-kray
         ingress:
           enabled: false
-  project: default
+  project: <PROJECT>
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

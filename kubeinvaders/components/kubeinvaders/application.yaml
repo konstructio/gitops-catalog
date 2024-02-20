@@ -10,7 +10,7 @@ spec:
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: kubeinvaders
-  project: default
+  project: <PROJECT>
   source:
     chart: kubeinvaders
     repoURL: https://lucky-sideburn.github.io/helm-charts/

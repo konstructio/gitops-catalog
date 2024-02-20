@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: argo-events
     name: <CLUSTER_DESTINATION>
-  project: default
+  project: <PROJECT>
   source:
     chart: argo-events
     repoURL: https://argoproj.github.io/argo-helm

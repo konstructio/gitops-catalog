@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: datadog
     name: <CLUSTER_DESTINATION>
-  project: default
+  project: <PROJECT>
   source:
     chart: datadog
     repoURL: https://helm.datadoghq.com
