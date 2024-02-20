@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: kyverno
     name: <CLUSTER_DESTINATION>
-  project: <PROJECT>
+  project: default
   source:
     chart: kyverno
     repoURL: https://kyverno.github.io/kyverno

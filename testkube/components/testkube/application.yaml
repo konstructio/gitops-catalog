@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: testkube
     name: <CLUSTER_DESTINATION>
-  project: <PROJECT>
+  project: default
   source:
     chart: testkube
     repoURL: https://kubeshop.github.io/helm-charts

@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: yourls
     name: <CLUSTER_DESTINATION>
-  project: <PROJECT>
+  project: default
   source:
     chart: yourls
     repoURL: https://charts.yourls.org

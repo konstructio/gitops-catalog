@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: tracetest
     name: <CLUSTER_DESTINATION>
-  project: <PROJECT>
+  project: default
   source:
     chart: tracetest
     repoURL: https://kubeshop.github.io/helm-charts
