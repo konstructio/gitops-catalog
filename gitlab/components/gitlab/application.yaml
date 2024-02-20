@@ -106,9 +106,9 @@ metadata:
     argocd.argoproj.io/sync-wave: '30'
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    name: <CLUSTER_DESTINATION>
     namespace: gitlab
-  project: default
+  project: <PROJECT>
   source:
     repoURL: 'https://charts.gitlab.io'
     targetRevision: 7.7.3

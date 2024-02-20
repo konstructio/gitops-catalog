@@ -5,7 +5,7 @@ metadata:
   name: kratix
   namespace: argocd
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: "https://github.com/syntasso/helm-charts.git"
     path: kratix
@@ -41,7 +41,7 @@ spec:
           url: "<GITHUB_HOST>"
           path: kratix
   destination:
-    server: "https://kubernetes.default.svc"
+    name: <CLUSTER_DESTINATION>
     namespace: kratix-platform-system
   syncPolicy:
     automated:

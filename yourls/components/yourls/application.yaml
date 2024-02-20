@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: yourls
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: yourls
     repoURL: https://charts.yourls.org
@@ -37,7 +37,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
   name: yourls
-  namespace: yourls
+  namespace: argocd
 spec:
   ingressClassName: nginx
   rules:

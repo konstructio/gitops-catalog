@@ -11,7 +11,7 @@ metadata:
 spec:
   destination:
     namespace: kubefirst
-    server: 'https://kubernetes.default.svc'
+    name: <CLUSTER_DESTINATION>
   source:
     repoURL: 'https://charts.kubefirst.com'
     targetRevision: 0.1.0
@@ -22,7 +22,7 @@ spec:
           repository: public.ecr.aws/kubefirst/flappy-kray
         ingress:
           enabled: false
-  project: default
+  project: <PROJECT>
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
@@ -37,7 +37,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
   name: flappy-kray
-  namespace: kubefirst
+  namespace: argocd
 spec:
   ingressClassName: nginx
   rules:

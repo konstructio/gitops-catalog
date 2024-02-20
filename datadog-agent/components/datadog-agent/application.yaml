@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: datadog
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: datadog
     repoURL: https://helm.datadoghq.com

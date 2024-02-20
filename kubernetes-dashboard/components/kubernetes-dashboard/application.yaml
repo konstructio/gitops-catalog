@@ -5,13 +5,13 @@ metadata:
   name: kubernetes-dashboard
   namespace: argocd
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: 'https://kubernetes.github.io/dashboard'
     targetRevision: 6.0.0
     chart: kubernetes-dashboard
   destination:
-    server: 'https://kubernetes.default.svc'
+    name: <CLUSTER_DESTINATION>
     namespace: kubernetes-dashboard
   syncPolicy:
     automated:

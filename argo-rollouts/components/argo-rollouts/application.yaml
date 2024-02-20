@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: argo-rollouts
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: argo-rollouts
     repoURL: https://argoproj.github.io/argo-helm

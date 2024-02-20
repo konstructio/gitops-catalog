@@ -5,7 +5,7 @@ metadata:
   name: default-git-dependencies
   namespace: argocd
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: "git@github.com:<GITHUB_OWNER>/gitops.git"
     path: kratix/platform/dependencies
@@ -13,7 +13,7 @@ spec:
     directory:
       recurse: true
   destination:
-    server: https://kubernetes.default.svc
+    name: <CLUSTER_DESTINATION>
   syncPolicy:
     automated:
       prune: true
@@ -31,7 +31,7 @@ metadata:
   name: default-git-resources
   namespace: argocd
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: "git@github.com:<GITHUB_OWNER>/gitops.git"
     path: kratix/platform/resources
@@ -39,7 +39,7 @@ spec:
     directory:
       recurse: true
   destination:
-    server: https://kubernetes.default.svc
+    name: <CLUSTER_DESTINATION>
   syncPolicy:
     automated:
       prune: true

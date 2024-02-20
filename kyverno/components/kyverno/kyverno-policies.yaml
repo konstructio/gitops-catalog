@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: kyverno
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: kyverno-policies
     repoURL: https://kyverno.github.io/kyverno

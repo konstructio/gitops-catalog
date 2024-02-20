@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: argo-events
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: argo-events
     repoURL: https://argoproj.github.io/argo-helm

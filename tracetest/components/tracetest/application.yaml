@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: tracetest
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: tracetest
     repoURL: https://kubeshop.github.io/helm-charts

@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: mysql
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: mysql
     repoURL: https://charts.bitnami.com/bitnami

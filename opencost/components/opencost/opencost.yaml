@@ -11,8 +11,8 @@ metadata:
 spec:
   destination:
     namespace: opencost
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: opencost
     repoURL: https://opencost.github.io/opencost-helm-chart

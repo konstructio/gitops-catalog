@@ -9,8 +9,8 @@ metadata:
 spec:
   destination:
     namespace: testkube
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: testkube
     repoURL: https://kubeshop.github.io/helm-charts

@@ -9,7 +9,7 @@ metadata:
 spec:
   destination:
     name: <CLUSTER_DESTINATION>
-    namespace: <CLUSTER_DESTINATION>
+    namespace: kubeinvaders
   project: <PROJECT>
   source:
     chart: kubeinvaders
