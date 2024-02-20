@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: datadog
+  name: <CLUSTER_NAME>-datadog
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: datadog
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: datadog
     repoURL: https://helm.datadoghq.com
@@ -19,7 +19,7 @@ spec:
       releaseName: datadog
       values: |
         datadog:
-          apiKeyExistingSecret: datadog-secret
+          apiKeyExistingSecret: <CLUSTER_NAME>-datadog-secret
           clusterName: "<CLUSTER_NAME>"
           env:
           - name: DD_ENV

@@ -2,18 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: opencost-components
+  name: <CLUSTER_NAME>-opencost-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: <PROJECT>
+  project: default
   source:
     repoURL: <GITOPS_REPO_URL>
     path: <REGISTRY_PATH>/components/opencost
     targetRevision: HEAD
   destination:
-    name: <CLUSTER_DESTINATION>
+    name: in-cluster
     namespace: opencost
   syncPolicy:
     automated:

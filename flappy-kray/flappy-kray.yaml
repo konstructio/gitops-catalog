@@ -2,18 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: flappy-kray-components
+  name: <CLUSTER_NAME>-flappy-kray-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: <PROJECT>
+  project: default
   source:
     repoURL: <GITOPS_REPO_URL>
     path: <REGISTRY_PATH>/components/flappy-kray
     targetRevision: HEAD
   destination:
-    name: <CLUSTER_DESTINATION>
+    name: in-cluster
     namespace: flappy-kray
   syncPolicy:
     automated:

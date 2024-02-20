@@ -4,15 +4,15 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: '10'
-  name: prometheus
+  name: <CLUSTER_NAME>-prometheus
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: prometheus
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: prometheus
     repoURL: https://prometheus-community.github.io/helm-charts

@@ -4,15 +4,15 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: '20'
-  name: opencost
+  name: <CLUSTER_NAME>-opencost
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: opencost
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: opencost
     repoURL: https://opencost.github.io/opencost-helm-chart

@@ -2,18 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubescape-operator-components
+  name: <CLUSTER_NAME>-kubescape-operator-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: <PROJECT>
+  project: default
   source:
     repoURL: <GITOPS_REPO_URL>
     path: <REGISTRY_PATH>/components/kubescape-operator
     targetRevision: HEAD
   destination:
-    name: <CLUSTER_DESTINATION>
+    name: in-cluster
     namespace: kubescape-operator
   syncPolicy:
     automated:

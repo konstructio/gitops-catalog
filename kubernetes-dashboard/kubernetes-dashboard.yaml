@@ -2,18 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard-components
+  name: <CLUSTER_NAME>-kubernetes-dashboard-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: <PROJECT>
+  project: default
   source:
     repoURL: <GITOPS_REPO_URL>
     path: <REGISTRY_PATH>/components/kubernetes-dashboard
     targetRevision: HEAD
   destination:
-    name: <CLUSTER_DESTINATION>
+    name: in-cluster
     namespace: kubernetes-dashboard
   syncPolicy:
     automated:
