@@ -5,7 +5,7 @@ metadata:
   name: default-git-dependencies
   namespace: argocd
 spec:
-  project: <PROJECT>
+  project: default
   source:
     repoURL: "git@github.com:<GITHUB_OWNER>/gitops.git"
     path: kratix/platform/dependencies
@@ -31,7 +31,7 @@ metadata:
   name: default-git-resources
   namespace: argocd
 spec:
-  project: <PROJECT>
+  project: default
   source:
     repoURL: "git@github.com:<GITHUB_OWNER>/gitops.git"
     path: kratix/platform/resources

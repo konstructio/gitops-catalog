@@ -108,7 +108,7 @@ spec:
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: gitlab
-  project: <PROJECT>
+  project: default
   source:
     repoURL: 'https://charts.gitlab.io'
     targetRevision: 7.7.3
