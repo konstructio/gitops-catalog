@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: testkube
+  name: testkube-<ENVIRONMENT>
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -21,7 +21,7 @@ spec:
         testkube-api.minio.enabled: false
         mongodb.enabled: false
         testkube-dashboard.enabled: false
-        testkube-api.cloud.existingSecret.name: testkube-secret
+        testkube-api.cloud.existingSecret.name: testkube-<ENVIRONMENT>-secret
         testkube-api.cloud.existingSecret.key: API_KEY
         testkube-api.cloud.existingSecret.orgId: ORG_ID
         testkube-api.cloud.existingSecret.envId: ENV_ID

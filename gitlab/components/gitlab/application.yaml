@@ -28,7 +28,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: gitlab
+  name: gitlab-<ENVIRONMENT>
   labels:
     name: gitlab
   annotations:
@@ -37,7 +37,7 @@ metadata:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: gitlab-vault-oidc-template
+  name: gitlab-<ENVIRONMENT>-vault-oidc-template
   namespace: gitlab
   annotations:
     argocd.argoproj.io/sync-wave: "10"
@@ -66,7 +66,7 @@ data:
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: gitlab-vault-oidc-template
+  name: gitlab-<ENVIRONMENT>-vault-oidc-template
   namespace: gitlab
   annotations:
     argocd.argoproj.io/sync-wave: "20"
@@ -81,7 +81,7 @@ spec:
       templateFrom:
         - configMap:
             # name of the configmap to pull in
-            name: gitlab-vault-oidc-template
+            name: gitlab-<ENVIRONMENT>-vault-oidc-template
             # here you define the keys that should be used as template
             items:
               - key: provider
@@ -98,7 +98,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitlab
+  name: gitlab-<ENVIRONMENT>
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

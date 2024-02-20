@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: testkube-components
+  name: testkube-<ENVIRONMENT>-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
