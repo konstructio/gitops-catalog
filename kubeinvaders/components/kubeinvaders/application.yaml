@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubeinvaders-<ENVIRONMENT>
+  name: kubeinvaders
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -37,7 +37,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
-  name: kubeinvaders-<ENVIRONMENT>
+  name: kubeinvaders
   namespace: argocd
 spec:
   ingressClassName: nginx

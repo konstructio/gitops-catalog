@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql-<ENVIRONMENT>
+  name: mysql
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

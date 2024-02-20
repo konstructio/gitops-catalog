@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kratix-<ENVIRONMENT>
+  name: kratix
   namespace: argocd
 spec:
   project: <PROJECT>

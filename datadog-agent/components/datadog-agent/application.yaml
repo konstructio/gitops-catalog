@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: datadog-<ENVIRONMENT>
+  name: datadog
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

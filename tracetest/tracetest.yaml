@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tracetest-<ENVIRONMENT>-components
+  name: tracetest-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'

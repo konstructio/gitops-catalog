@@ -4,7 +4,7 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: '10'
-  name: prometheus-<ENVIRONMENT>
+  name: prometheus
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tracetest-<ENVIRONMENT>
+  name: tracetest
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

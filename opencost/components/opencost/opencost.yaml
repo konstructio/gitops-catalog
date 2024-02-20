@@ -4,7 +4,7 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: '20'
-  name: opencost-<ENVIRONMENT>
+  name: opencost
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

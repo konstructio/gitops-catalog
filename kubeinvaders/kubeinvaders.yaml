@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubeinvaders-<ENVIRONMENT>-components
+  name: kubeinvaders-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '100'
