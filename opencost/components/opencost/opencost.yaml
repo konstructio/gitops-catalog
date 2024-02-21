@@ -12,7 +12,7 @@ spec:
   destination:
     namespace: opencost
     name: <CLUSTER_DESTINATION>
-  project: default
+  project: <PROJECT>
   source:
     chart: opencost
     repoURL: https://opencost.github.io/opencost-helm-chart

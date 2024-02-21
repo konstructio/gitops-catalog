@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: mysql
     name: <CLUSTER_DESTINATION>
-  project: default
+  project: <PROJECT>
   source:
     chart: mysql
     repoURL: https://charts.bitnami.com/bitnami

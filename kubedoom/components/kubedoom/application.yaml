@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: kubedoom
     name: <CLUSTER_DESTINATION>
-  project: default
+  project: <PROJECT>
   source:
     chart: kubedoom
     repoURL: https://christianknell.github.io/helm-charts

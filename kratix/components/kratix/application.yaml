@@ -5,7 +5,7 @@ metadata:
   name: <CLUSTER_NAME>-kratix
   namespace: argocd
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: "https://github.com/syntasso/helm-charts.git"
     path: kratix

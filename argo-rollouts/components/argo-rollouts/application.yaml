@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: argo-rollouts
     name: <CLUSTER_DESTINATION>
-  project: default
+  project: <PROJECT>
   source:
     chart: argo-rollouts
     repoURL: https://argoproj.github.io/argo-helm
