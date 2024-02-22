@@ -19,7 +19,7 @@ spec:
       releaseName: datadog
       values: |
         datadog:
-          apiKeyExistingSecret: <CLUSTER_NAME>-datadog-secret
+          apiKeyExistingSecret: datadog-secret
           clusterName: "<CLUSTER_NAME>"
           env:
           - name: DD_ENV
