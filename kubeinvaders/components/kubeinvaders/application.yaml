@@ -16,7 +16,7 @@ spec:
     repoURL: https://lucky-sideburn.github.io/helm-charts/
     targetRevision: 1.9.6
     helm:
-      releaseName: my-kubeinvaders
+      releaseName: kubeinvaders
       values: |
         config:
           target_namespace: "development"
@@ -38,7 +38,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
   name: kubeinvaders
-  namespace: argocd
+  namespace: kubeinvaders
 spec:
   ingressClassName: nginx
   rules:
@@ -47,7 +47,7 @@ spec:
         paths:
           - backend:
               service:
-                name: my-kubeinvaders
+                name: kubeinvaders
                 port:
                   number: 8080
             path: /
