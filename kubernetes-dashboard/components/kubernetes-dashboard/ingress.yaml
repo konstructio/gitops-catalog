@@ -5,7 +5,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    argocd.argoproj.io/sync-wave: '1'
+    argocd.argoproj.io/sync-wave: '2'
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
 spec:
