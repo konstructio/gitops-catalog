@@ -10,6 +10,16 @@ spec:
     repoURL: 'https://kubernetes.github.io/dashboard'
     targetRevision: 6.0.0
     chart: kubernetes-dashboard
+    helm:
+      values: |
+        app:
+          ingress:
+            hosts:
+              # keep the only the 'localhost' host if you only want to access Dashboard using 'kubectl port-forward ...' on:
+              # https://localhost:8443
+              # please note that the ingress itself is managed in ingress.yaml
+              - localhost
+              - kubernetes-dashboard.<DOMAIN_NAME>
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: kubernetes-dashboard
