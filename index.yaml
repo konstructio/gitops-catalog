@@ -24,7 +24,7 @@ apps:
       - name: app-key
         label: Datadog application key
         env: DATADOG_APP_KEY
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/datadog-agent.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/datadog-agent.svg"
     description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can main/logostain and optimize your cloud or hybrid environments."
     category: Observability
 
