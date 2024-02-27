@@ -74,7 +74,7 @@ apps:
   - name: kubeinvaders
     displayName: KubeInvaders
     website: "https://github.com/lucky-sideburn/KubeInvaders"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubeinvaders.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubeinvaders.svg"
     description: "Gamified Chaos Engineering Tool for Kubernetes"
     category: Testing
 
