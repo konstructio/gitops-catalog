@@ -27,6 +27,11 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/datadog-agent.png"
     description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can main/logostain and optimize your cloud or hybrid environments."
     category: Observability
+    cloudDenylist:
+      - k3d
+      - vultr
+    gitDenylist:
+      - gitlab
 
   - name: flappy-kray
     displayName: Flappy K-Ray
@@ -55,6 +60,14 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kratix.svg"
     description: "Kratix is an open-source platform framework that combines the flexibility and customisability of building your own platform from scratch with the on-demand and self-service power of public clouds."
     category: App Management
+    cloudDenylist:
+      - aws
+      - civo
+      - digitalocean
+      - google
+      - vultr
+    gitDenylist:
+      - gitlab
 
   - name: kubedoom
     displayName: Kube DOOM
