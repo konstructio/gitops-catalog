@@ -109,7 +109,7 @@ apps:
   - name: opencost
     displayName: OpenCost
     website: "https://github.com/opencost/opencost"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/opencost.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/opencost.svg"
     description: "OpenCost is a vendor-neutral open source project for measuring and allocating infrastructure and container costs in real time."
     category: FinOps
 
