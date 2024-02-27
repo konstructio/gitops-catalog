@@ -27,11 +27,6 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/datadog-agent.png"
     description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can main/logostain and optimize your cloud or hybrid environments."
     category: Observability
-    cloudDenylist:
-      - k3d
-      - vultr
-    gitDenylist:
-      - gitlab
 
   - name: flappy-kray
     displayName: Flappy K-Ray
