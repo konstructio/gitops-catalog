@@ -67,7 +67,7 @@ apps:
   - name: kubedoom
     displayName: Kube DOOM
     website: "https://github.com/storax/kubedoom"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubedoom.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubedoom.svg"
     description: "Kill Kubernetes pods by playing Id's DOOM!s"
     category: Testing
 
