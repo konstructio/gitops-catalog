@@ -55,6 +55,14 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kratix.svg"
     description: "Kratix is an open-source platform framework that combines the flexibility and customisability of building your own platform from scratch with the on-demand and self-service power of public clouds."
     category: App Management
+    cloudDenylist:
+      - aws
+      - civo
+      - digitalocean
+      - google
+      - vultr
+    gitDenylist:
+      - gitlab
 
   - name: kubedoom
     displayName: Kube DOOM
