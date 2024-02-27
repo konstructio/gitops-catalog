@@ -2,12 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubescape-operator
+  name: <CLUSTER_NAME>-kubescape-operator
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: 'https://kubescape.github.io/helm-charts/'
     targetRevision: 1.17.3
@@ -16,7 +16,7 @@ spec:
       values: |
         clusterName: <CLUSTER_NAME>
   destination:
-    server: 'https://kubernetes.default.svc'
+    name: <CLUSTER_DESTINATION>
     namespace: kubescape
   syncPolicy:
     automated:

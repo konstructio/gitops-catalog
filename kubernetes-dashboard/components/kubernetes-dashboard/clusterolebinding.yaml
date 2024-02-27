@@ -7,8 +7,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "0"
 subjects:
   - kind: ServiceAccount
-    name: k8s-dashboard-sa
-    namespace: default
+    name: <CLUSTER_NAME>-kubernetes-dashboard
+    namespace: kubernetes-dashboard
 roleRef:
   kind: ClusterRole
   name: admin

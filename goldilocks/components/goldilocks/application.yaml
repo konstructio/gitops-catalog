@@ -2,18 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: goldilocks
+  name: <CLUSTER_NAME>-goldilocks
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: 'https://charts.fairwinds.com/stable'
     targetRevision: 6.5.6
     chart: goldilocks
   destination:
-    server: 'https://kubernetes.default.svc'
+    name: <CLUSTER_DESTINATION>
     namespace: goldilocks
   syncPolicy:
     automated:

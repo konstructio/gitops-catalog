@@ -2,18 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: polaris
+  name: <CLUSTER_NAME>-polaris
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: 'https://charts.fairwinds.com/stable'
     targetRevision: 5.7.6
     chart: polaris
   destination:
-    server: 'https://kubernetes.default.svc'
+    name: <CLUSTER_DESTINATION>
     namespace: polaris
   syncPolicy:
     automated:

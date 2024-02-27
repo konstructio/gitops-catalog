@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubeinvaders-components
+  name: <CLUSTER_NAME>-kubeinvaders-components
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: '10'
+    argocd.argoproj.io/sync-wave: '100'
 spec:
   project: default
   source:
@@ -14,7 +14,7 @@ spec:
     targetRevision: HEAD
   destination:
     name: in-cluster
-    namespace: kubeinvaders
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true

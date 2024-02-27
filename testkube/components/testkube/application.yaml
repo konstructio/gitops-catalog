@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: testkube
+  name: <CLUSTER_NAME>-testkube
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: testkube
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: testkube
     repoURL: https://kubeshop.github.io/helm-charts
@@ -21,7 +21,7 @@ spec:
         testkube-api.minio.enabled: false
         mongodb.enabled: false
         testkube-dashboard.enabled: false
-        testkube-api.cloud.existingSecret.name: testkube-secret
+        testkube-api.cloud.existingSecret.name: <CLUSTER_NAME>-testkube-secret
         testkube-api.cloud.existingSecret.key: API_KEY
         testkube-api.cloud.existingSecret.orgId: ORG_ID
         testkube-api.cloud.existingSecret.envId: ENV_ID

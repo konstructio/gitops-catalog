@@ -2,16 +2,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard
+  name: <CLUSTER_NAME>-kubernetes-dashboard
   namespace: argocd
 spec:
-  project: default
+  project: <PROJECT>
   source:
     repoURL: 'https://kubernetes.github.io/dashboard'
     targetRevision: 6.0.0
     chart: kubernetes-dashboard
+    helm:
+      values: |
+        app:
+          ingress:
+            hosts:
+              # keep only the 'localhost' host if you only want to access Dashboard using 'kubectl port-forward ...' on:
+              # https://localhost:8443
+              # please note that the ingress itself is managed in ingress.yaml
+              - localhost
+              - kubernetes-dashboard.<DOMAIN_NAME>
   destination:
-    server: 'https://kubernetes.default.svc'
+    name: <CLUSTER_DESTINATION>
     namespace: kubernetes-dashboard
   syncPolicy:
     automated:

@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: yourls
+  name: <CLUSTER_NAME>-yourls
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: yourls
-    server: https://kubernetes.default.svc
-  project: default
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
   source:
     chart: yourls
     repoURL: https://charts.yourls.org
@@ -36,8 +36,8 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
-  name: yourls
-  namespace: yourls
+  name: <CLUSTER_NAME>-yourls
+  namespace: argocd
 spec:
   ingressClassName: nginx
   rules:

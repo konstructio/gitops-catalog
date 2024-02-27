@@ -2,57 +2,42 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubeinvaders
+  name: <CLUSTER_NAME>-kubeinvaders
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
+    name: <CLUSTER_DESTINATION>
     namespace: kubeinvaders
-    server: https://kubernetes.default.svc
-  project: default
+  project: <PROJECT>
   source:
     chart: kubeinvaders
     repoURL: https://lucky-sideburn.github.io/helm-charts/
     targetRevision: 1.9.6
     helm:
-      releaseName: my-kubeinvaders
+      releaseName: kubeinvaders
       values: |
         config:
           target_namespace: "development"
         deployment:
           image:
             tag: v1.9.6
-        route_host: "kubeinvaders.<DOMAIN_NAME>"
+        ingress:
+          enabled: true
+          className: "nginx"
+          annotations:
+            # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+            argocd.argoproj.io/sync-wave: '1'
+          hostName: "kubeinvaders.<DOMAIN_NAME>"
+          tls:
+            - hosts:
+              - kubeinvaders.<DOMAIN_NAME>
+          secretName: kubeinvaders-tls
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    argocd.argoproj.io/sync-wave: '1'
-  name: kubeinvaders
-  namespace: kubeinvaders
-spec:
-  ingressClassName: nginx
-  rules:
-    - host: kubeinvaders.<DOMAIN_NAME>
-      http:
-        paths:
-          - backend:
-              service:
-                name: my-kubeinvaders
-                port:
-                  number: 8080
-            path: /
-            pathType: Prefix
-  tls:
-    - hosts:
-        - kubeinvaders.<DOMAIN_NAME>
-      secretName: kubeinvaders-tls
