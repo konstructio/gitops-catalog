@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-vertical-pod-autoscaler
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '10'
+spec:
+  project: <PROJECT>
+  source:
+    repoURL: 'https://charts.fairwinds.com/stable'
+    targetRevision: 4.4.2
+    chart: vertical-pod-autoscaler
+  destination:
+    name: <CLUSTER_DESTINATION>
+    namespace: vertical-pod-autoscaler
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
