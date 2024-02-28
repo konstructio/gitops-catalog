@@ -99,6 +99,13 @@ apps:
     description: "Kyverno is a policy engine designed for Kubernetes. Kyverno Policies are managed as Kubernetes resources and no new language is required to write policies."
     category: Security
 
+  - name: metrics-server
+    displayName: Metrics Server
+    website: "https://github.com/kubernetes-sigs/metrics-server"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/metrics-server.svg"
+    description: "Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines."
+    category: Observability
+
   - name: mysql
     displayName: MySQL
     website: "https://www.mysql.com/"
