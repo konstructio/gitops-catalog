@@ -3,7 +3,7 @@ apps:
   - name: argo-events
     displayName: Argo Events
     website: "https://github.com/argoproj/argo-events"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-events.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-events.svg"
     description: "Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc. on events from a variety of sources."
     category: CI/CD
 
