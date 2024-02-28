@@ -116,7 +116,7 @@ apps:
   - name: polaris
     displayName: Polaris
     website: "https://github.com/FairwindsOps/polaris"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/polaris.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/polaris.svg"
     description: "Polaris is an open source policy engine for Kubernetes."
     category: Security
 
