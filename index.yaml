@@ -38,7 +38,7 @@ apps:
   - name: gitlab
     displayName: GitLab
     website: "https://docs.gitlab.com/charts/installation/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/gitlab.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/gitlab.svg"
     description: "GitLab Server - a complete devops solution that does it all, from project planning and source code management to CI/CD, monitoring, and security."
     category: CI/CD
 
@@ -95,7 +95,7 @@ apps:
   - name: kyverno
     displayName: Kyverno
     website: "https://github.com/kyverno/kyverno"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kyverno.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kyverno.svg"
     description: "Kyverno is a policy engine designed for Kubernetes. Kyverno Policies are managed as Kubernetes resources and no new language is required to write policies."
     category: Security
 
