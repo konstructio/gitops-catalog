@@ -38,7 +38,7 @@ apps:
   - name: gitlab
     displayName: GitLab
     website: "https://docs.gitlab.com/charts/installation/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/gitlab.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/gitlab.svg"
     description: "GitLab Server - a complete devops solution that does it all, from project planning and source code management to CI/CD, monitoring, and security."
     category: CI/CD
 
