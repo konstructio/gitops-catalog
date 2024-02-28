@@ -10,7 +10,7 @@ apps:
   - name: argo-rollouts
     displayName: Argo Rollouts
     website: "https://github.com/argoproj/argo-rollouts"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-rollouts.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-rollouts.svg"
     description: "A Kubernetes controller & set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, & progressive delivery features to Kubernetes."
     category: CI/CD
 
