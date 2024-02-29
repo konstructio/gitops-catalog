@@ -31,7 +31,7 @@ apps:
   - name: flappy-kray
     displayName: Flappy K-Ray
     website: "https://kray.kubefirst.io"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/flappy-kray.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/flappy-kray.svg"
     description: "Flappy K-Ray is an adaptation of the popular Flappy Bird game where Kubefirst's mascot K-Ray navigates an endless maze of GitOps pipelines."
     category: End user application
 
