@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: <CLUSTER_NAME>-goldilocks-components
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: '100'
 spec:
