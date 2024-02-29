@@ -15,7 +15,7 @@ spec:
         paths:
           - backend:
               service:
-                name: <CLUSTER_NAME>-goldilocks
+                name: <CLUSTER_NAME>-goldilocks-dashboard
                 port:
                   number: 80
             path: /
