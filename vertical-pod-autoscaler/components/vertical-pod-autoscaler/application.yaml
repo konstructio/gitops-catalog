@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: 'https://charts.fairwinds.com/stable'
     targetRevision: 4.4.2
-    chart: vertical-pod-autoscaler
+    chart: vpa
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: vertical-pod-autoscaler
