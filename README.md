@@ -10,21 +10,42 @@
 
 The kubefirst GitOps Catalog repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
 
+- [Contributing](#contributing)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Add your application](#add-your-application)
+- [Kubefirst Tokens](#kubefirst-tokens)
+- [Application Maintenance and Removal](#application-maintenance-and-removal)
+- [Testing](#testing)
+- [Debugging](#debugging)
+- [Need Help](#need-help)
+
 ## Contributing
+
+To contribute to the GitOps Catalog, you can add any applications, whether you are the creator, maintainers or not, by following the "[Add your application](#add-your-application)" steps. If, for any reasons, you would prefer us to add the application, feel free to [create an issue with your request](https://github.com/kubefirst/gitops-catalog/issues/new), and we'll see what we can do.
+
+### Acceptance Criteria
+
+We will approve all GitOps Catalog application submissions as long as they are working with the latest version of kubefirst.
+
+### Add your application
 
 To make a new application available for installation, you'll need to:
 
 - Fork this repository.
 - Create a new directory with your new application's name in your fork.
-  - Add, and organize your Argo CD GitOps file(s) into it, if any.
-  - Add a SVG file of the application's logo, named `<appName>.svg` under the [logos folder](https://github.com/kubefirst/gitops-catalog/tree/main/logos) . If you don't have a SVG file, PNG and JPEG are also accepted. The application logo will be displayed in the GitOps catalog at a size of 32x32 pixels.
+  - Create a `components` folder, and inside, another folder with your application's name.
+  - In that latest folder, add, and organize your Argo CD manifest file(s) into it.
+    - Don't forget to look at the [Kubefirst Tokens](#kubefirst-tokens) section as you can dynamically add specific values to your manifests like domain or cluster names.
+  - In the root folder of your application create an "App of Apps" YAML file that will point to the component folder.
+- Add a SVG file of the application's logo, named `<appName>.svg` under the [logos folder](https://github.com/kubefirst/gitops-catalog/tree/main/logos).
+  - If you don't have a SVG file, PNG and JPEG are also accepted. The application logo will be displayed in the GitOps catalog at a size of 32x32 pixels.
 - Add a new entry to the [index.yaml](index.yaml) file with:
   - **name**: application name as described in your YAML file.
   - **displayName**: name to be displayed in the GitOps catalog (120 characters maximum).
   - **website**: application website or GitHub repository.
   - **imageUrl**: `https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/<appName>.<svg|png|jpeg|jpg>`
   - **description**: an insightful description about your application. It will be displayed in the GitOps Catalog (200 characters maximum).
-  - **category**: one category amongst the following ones:
+  - **category**: one category amongst the following ones (if no category seems to be a good fit, add them to `Miscellaneous`):
     - App management
     - Architecture
     - CI/CD
@@ -38,13 +59,11 @@ To make a new application available for installation, you'll need to:
     - Security
     - Storage
     - Testing
-- Create a pull request with the changes from your branch to our main branch.
+- Create a pull request with the changes from your fork to our repository main branch.
 
-### Acceptance Criteria
+Feel free to check the other applications to find examples.
 
-We will approve all GitOps Catalog application submissions as long as they are working with the latest version of kubefirst.
-
-### Kubefirst Tokens
+#### Kubefirst Tokens
 
 Any GitOps Catalog application can use the following tokens in their application's YAML so they can be replaced with the provisioned cluster information:
 
@@ -63,7 +82,7 @@ Any GitOps Catalog application can use the following tokens in their application
 | `CERT_MANAGER_ISSUER_ANNOTATION_3`                | An annotation for cert-manager to specify the issuer for the third set of certificates.                                          |
 | `CERT_MANAGER_ISSUER_ANNOTATION_4`                | An annotation for cert-manager to specify the issuer for the fourth set of certificates.                                         |
 | `CHARTMUSEUM_INGRESS_URL`                         | The URL for accessing the ChartMuseum UI via ingress.                                                                            |
-| `CLOUD_PROVIDER`                                  | The cloud service provider where the cluster is hosted, such as AWS, GCP, or Azure.                                              |
+| `CLOUD_PROVIDER`                                  | The cloud service provider where the cluster is hosted, such as AWS, Civo, DigitalOcean, Google Cloud or Vultr.                  |
 | `CLOUD_REGION`                                    | The geographical region of the cloud provider where the cluster is deployed.                                                     |
 | `CLUSTER_ID`                                      | A unique identifier for the cluster, assigned by the cloud provider or the management system.                                    |
 | `CLUSTER_NAME`                                    | The name of the Kubernetes cluster, used to identify it within the cloud provider or the local environment.                      |
@@ -116,7 +135,7 @@ Any GitOps Catalog application can use the following tokens in their application
 
 ### Application Maintenance and Removal
 
-We may remove an application from the GitOps Catalog with no notice if a severe vulnerability is discovered. Another reason for removing an application is if an application becomes abandoned or unmaintained by the upstream project.
+We may remove an application from the GitOps Catalog with no notice if a severe vulnerability is discovered. Another reason for removing an application is if an application becomes abandoned or unmaintained by the upstream project/company/maintainer(s).
 
 ### Testing
 
