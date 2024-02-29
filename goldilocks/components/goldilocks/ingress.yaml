@@ -6,7 +6,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
   name: goldilocks
-  namespace: argocd
+  namespace: goldilocks
 spec:
   ingressClassName: nginx
   rules:
