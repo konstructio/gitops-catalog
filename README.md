@@ -59,7 +59,7 @@ To make a new application available for installation, you'll need to:
     - Security
     - Storage
     - Testing
-- Create a pull request with the changes from your fork to our repository main branch.
+- Create a pull request with the changes from your fork to our repository main branch. Be sure to [sign your commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
 
 Feel free to check the other applications to find examples.
 
