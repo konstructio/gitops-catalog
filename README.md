@@ -23,6 +23,9 @@ The kubefirst GitOps Catalog repository is a community-driven series of cloud na
 
 To contribute to the GitOps Catalog, you can add any applications, whether you are the creator, maintainers or not, by following the "[Add your application](#add-your-application)" steps. If, for any reasons, you would prefer us to add the application, feel free to [create an issue with your request](https://github.com/kubefirst/gitops-catalog/issues/new), and we'll see what we can do.
 
+[![Video](https://img.youtube.com/vi/O8pTLnqIAuk/maxresdefault.jpg)](https://www.youtube.com/live/O8pTLnqIAuk)
+_Click to listen to a livestream we did on how to add an application to the catalog_
+
 ### Acceptance Criteria
 
 We will approve all GitOps Catalog application submissions as long as they are working with the latest version of kubefirst.
