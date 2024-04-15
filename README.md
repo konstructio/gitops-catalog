@@ -8,7 +8,9 @@
 
 # Community-driven Cloud Native GitOps
 
-The kubefirst GitOps Catalog repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
+![GitOps Catalog preview](img/gitops-catalog.png)
+
+The kubefirst [GitOps Catalog](https://docs.kubefirst.io/aws/gitops-catalog) repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
 
 - [Contributing](#contributing)
 - [Acceptance Criteria](#acceptance-criteria)
