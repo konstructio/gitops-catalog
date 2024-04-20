@@ -6,7 +6,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
   name: flappy-kray
-  namespace: argocd
+  namespace: flappy-kray
 spec:
   ingressClassName: nginx
   rules:
@@ -15,7 +15,7 @@ spec:
         paths:
           - backend:
               service:
-                name: flappy-kray
+                name: <CLUSTER_NAME>-flappy-kray
                 port:
                   number: 80
             path: /
