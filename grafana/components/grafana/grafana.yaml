@@ -16,7 +16,7 @@ spec:
   source:
     chart: grafana
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: 7.3.9
+    targetRevision: 10.0.7
     helm:
       releaseName: grafana
   syncPolicy:
