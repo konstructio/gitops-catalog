@@ -158,6 +158,13 @@ apps:
     description: "Tracetest uses your existing OpenTelemetry traces to power trace-based testing with assertions against your trace data at every point of the request transaction."
     category: Testing
 
+  - name: typesense
+    displayName: TypeSense
+    website: "https://github.com/typesense/typesense"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/typesense.svg"
+    description: "Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences (deployed using the Typesense-Kubernetes-Operator)."
+    category: End user application
+
   - name: vertical-pod-autoscaler
     displayName: Vertical Pod Autoscaler
     website: "https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler"
