@@ -1,3 +1,4 @@
+---
 apiVersion: typesenseproject.org/v1
 kind: TypesenseOperator
 metadata:
