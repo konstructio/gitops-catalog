@@ -8,7 +8,9 @@
 
 # Community-driven Cloud Native GitOps
 
-The kubefirst GitOps Catalog repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
+![GitOps Catalog preview](img/gitops-catalog.png)
+
+The kubefirst [GitOps Catalog](https://docs.kubefirst.io/aws/gitops-catalog) repository is a community-driven series of cloud native apps that can be added onto the kubefirst platform easily once the platform has been provisioned.
 
 - [Contributing](#contributing)
 - [Acceptance Criteria](#acceptance-criteria)
@@ -22,6 +24,9 @@ The kubefirst GitOps Catalog repository is a community-driven series of cloud na
 ## Contributing
 
 To contribute to the GitOps Catalog, you can add any applications, whether you are the creator, maintainers or not, by following the "[Add your application](#add-your-application)" steps. If, for any reasons, you would prefer us to add the application, feel free to [create an issue with your request](https://github.com/kubefirst/gitops-catalog/issues/new), and we'll see what we can do.
+
+[![Video](https://img.youtube.com/vi/O8pTLnqIAuk/maxresdefault.jpg)](https://www.youtube.com/live/O8pTLnqIAuk)
+_Click to listen to a livestream we did on how to add an application to the catalog_
 
 ### Acceptance Criteria
 
@@ -59,7 +64,7 @@ To make a new application available for installation, you'll need to:
     - Security
     - Storage
     - Testing
-- Create a pull request with the changes from your fork to our repository main branch.
+- Create a pull request with the changes from your fork to our repository main branch. Be sure to [sign your commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
 
 Feel free to check the other applications to find examples.
 

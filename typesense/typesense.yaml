@@ -2,21 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: <CLUSTER_NAME>-polaris-components
+  name: <CLUSTER_NAME>-typesense-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '100'
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: <GITOPS_REPO_URL>
-    path: <REGISTRY_PATH>/components/polaris
+    path: <REGISTRY_PATH>/components/typesense
     targetRevision: HEAD
   destination:
     name: in-cluster
-    namespace: polaris
+    namespace: typesense
   syncPolicy:
     automated:
       prune: true

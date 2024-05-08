@@ -49,6 +49,13 @@ apps:
     description: "Goldilocks is a utility that can help you identify a starting point for resource requests and limits."
     category: Monitoring
 
+  - name: grafana
+    displayName: Grafana
+    website: "https://github.com/grafana/grafana"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/grafana.svg"
+    description: "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and more."
+    category: Observability
+
   - name: kratix
     displayName: Kratix
     website: "https://github.com/syntasso/kratix"
@@ -150,6 +157,13 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/tracetest.svg"
     description: "Tracetest uses your existing OpenTelemetry traces to power trace-based testing with assertions against your trace data at every point of the request transaction."
     category: Testing
+
+  - name: typesense
+    displayName: TypeSense
+    website: "https://github.com/typesense/typesense"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/typesense.svg"
+    description: "Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences (deployed using the Typesense-Kubernetes-Operator)."
+    category: End user application
 
   - name: vertical-pod-autoscaler
     displayName: Vertical Pod Autoscaler

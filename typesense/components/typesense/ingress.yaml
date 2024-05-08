@@ -5,22 +5,22 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
-  name: flappy-kray
-  namespace: flappy-kray
+  name: <CLUSTER_NAME>-typesense
+  namespace: argocd
 spec:
   ingressClassName: nginx
   rules:
-    - host: flappy-kray.<DOMAIN_NAME>
+    - host: typesense.<DOMAIN_NAME>
       http:
         paths:
           - backend:
               service:
-                name: <CLUSTER_NAME>-flappy-kray
+                name: typesense-svc
                 port:
-                  number: 80
+                  number: 8108
             path: /
             pathType: Prefix
   tls:
     - hosts:
-        - flappy-kray.<DOMAIN_NAME>
-      secretName: flappy-kray-tls
+        - typesense.<DOMAIN_NAME>
+      secretName: typesense-tls
