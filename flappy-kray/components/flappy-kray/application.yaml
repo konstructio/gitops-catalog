@@ -10,7 +10,7 @@ metadata:
     argocd.argoproj.io/sync-wave: '0'
 spec:
   destination:
-    namespace: kubefirst
+    namespace: flappy-kray
     name: <CLUSTER_DESTINATION>
   source:
     repoURL: 'https://charts.kubefirst.com'

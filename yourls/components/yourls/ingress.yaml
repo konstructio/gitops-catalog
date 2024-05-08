@@ -5,22 +5,22 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     argocd.argoproj.io/sync-wave: '1'
-  name: flappy-kray
-  namespace: flappy-kray
+  name: <CLUSTER_NAME>-yourls
+  namespace: argocd
 spec:
   ingressClassName: nginx
   rules:
-    - host: flappy-kray.<DOMAIN_NAME>
+    - host: yourls.<DOMAIN_NAME>
       http:
         paths:
           - backend:
               service:
-                name: <CLUSTER_NAME>-flappy-kray
+                name: yourls
                 port:
                   number: 80
             path: /
             pathType: Prefix
   tls:
     - hosts:
-        - flappy-kray.<DOMAIN_NAME>
-      secretName: flappy-kray-tls
+        - yourls.<DOMAIN_NAME>
+      secretName: yourls-tls

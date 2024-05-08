@@ -1,0 +1,25 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-typesense
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '20'
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: typesense
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
+  source:
+    repoURL: 'https://github.com/sai3010/Typesense-Kubernetes-Operator.git'
+    path: deploy
+    targetRevision: '2.0'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
