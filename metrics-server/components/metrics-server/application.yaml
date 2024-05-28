@@ -12,6 +12,11 @@ spec:
     repoURL: 'https://kubernetes-sigs.github.io/metrics-server'
     targetRevision: 3.12.0
     chart: metrics-server
+    # It's not suggested to run in production with this parameter: you should deploy a signed certificate for kubelet instead
+    helm:
+      values: |
+        args:
+          - --kubelet-insecure-tls
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: metrics-server
