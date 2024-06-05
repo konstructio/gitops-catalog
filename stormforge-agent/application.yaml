@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: <CLUSTER_NAME>-stormforge-components
+  name: <CLUSTER_NAME>-stormforge-agent-components
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '100'
@@ -12,11 +12,11 @@ spec:
   project: default
   source:
     repoURL: <GITOPS_REPO_URL>
-    path: <REGISTRY_PATH>/components/stormforge
+    path: <REGISTRY_PATH>/components/stormforge-agent
     targetRevision: HEAD
   destination:
     name: in-cluster
-    namespace: stormforge
+    namespace: stormforge-system
   syncPolicy:
     automated:
       prune: true

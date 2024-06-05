@@ -138,20 +138,20 @@ apps:
     displayName: Stormforge Agent
     website: "https://stormforge.io"
     secretKeys:
-      - name: STORMFORGE_CLIENT_ID
-        label: STORMFORGE_CLIENT_ID
-        env: STORMFORGE_CLIENT_ID
-      - name: STORMFORGE_CLIENT_SECRET
-        label: STORMFORGE_CLIENT_SECRET
-        env: STORMFORGE_CLIENT_SECRET
       - name: STORMFORGE_SERVER
-        label: STORMFORGE_SERVER
+        label: StormForge Address
         env: STORMFORGE_SERVER
       - name: STORMFORGE_ISSUER
-        label: STORMFORGE_ISSUER (same value as stormforge server)
+        label: Authorization Issuer
         env: STORMFORGE_ISSUER
+      - name: STORMFORGE_CLIENT_ID
+        label: Authorization ClientID
+        env: STORMFORGE_CLIENT_ID
+      - name: STORMFORGE_CLIENT_SECRET
+        label: Authorization ClientSecret)
+        env: STORMFORGE_CLIENT_SECRET
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/stormforge.png"
-    description: "Stormforge provides automated Kubernetes resource management for platform engineering teams to continuously rightsize workloads with HPA compatibility."
+    description: "StormForge provides automated Kubernetes resource management for platform engineering teams to continuously rightsize workloads with HPA compatibility."
     category: Architecture
 
   - name: testkube

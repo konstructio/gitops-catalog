@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: <CLUSTER_NAME>-stormforge
+  name: <CLUSTER_NAME>-stormforge-agent
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
