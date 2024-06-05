@@ -134,6 +134,26 @@ apps:
     description: "Polaris is an open source policy engine for Kubernetes."
     category: Security
 
+  - name: stormforge-agent
+    displayName: Stormforge Agent
+    website: "https://stormforge.io"
+    secretKeys:
+      - name: STORMFORGE_CLIENT_ID
+        label: STORMFORGE_CLIENT_ID
+        env: STORMFORGE_CLIENT_ID
+      - name: STORMFORGE_CLIENT_SECRET
+        label: STORMFORGE_CLIENT_SECRET
+        env: STORMFORGE_CLIENT_SECRET
+      - name: STORMFORGE_SERVER
+        label: STORMFORGE_SERVER
+        env: STORMFORGE_SERVER
+      - name: STORMFORGE_ISSUER
+        label: STORMFORGE_ISSUER (same value as stormforge server)
+        env: STORMFORGE_ISSUER
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/stormforge.png"
+    description: "Stormforge provides automated Kubernetes resource management for platform engineering teams to continuously rightsize workloads with HPA compatibility."
+    category: Architecture
+
   - name: testkube
     displayName: Testkube
     website: "https://github.com/kubeshop/testkube"
