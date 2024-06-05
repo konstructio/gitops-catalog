@@ -151,7 +151,7 @@ apps:
         label: STORMFORGE_ISSUER (same value as stormforge server)
         env: STORMFORGE_ISSUER
     imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/stormforge.png"
-    description: "Sourceforge provides automated Kubernetes resource management for platform engineering teams to continuously rightsize workloads with HPA compatibility."
+    description: "Stormforge provides automated Kubernetes resource management for platform engineering teams to continuously rightsize workloads with HPA compatibility."
     category: Architecture
 
   - name: testkube
