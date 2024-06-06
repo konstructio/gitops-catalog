@@ -6,14 +6,16 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: '3'
 spec:
   destination:
     namespace: stormforge-system
     name: <CLUSTER_DESTINATION>
   project: <PROJECT>
   source:
-    chart: stormforge
-    repoURL: oci://registry.stormforge.io/library/stormforge-agent
+    chart: stormforge-agent
+    repoURL: registry.stormforge.io/library
     targetRevision: 2.10.8
     helm:
       releaseName: stormforge
@@ -21,7 +23,7 @@ spec:
         clusterName: <CLUSTER_NAME>
         stormforge:
           address: https://api.stormforge.io/
-          manageAuthSecret: false
+        manageAuthSecret: false
   syncPolicy:
     automated:
       prune: true
