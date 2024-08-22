@@ -14,6 +14,13 @@ apps:
     description: "A Kubernetes controller & set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, & progressive delivery features to Kubernetes."
     category: CI/CD
 
+  - name: cluster-autoscaler-civo
+    displayName: Civo Cluster Autoscaler
+    website: "https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/cluster-autoscaler.svg"
+    description: "Configured for clusters running on Civo. Cluster Autoscaler is a tool that automatically adjusts the size of the Kubernetes cluster when one of the following conditions is true: 1) there are pods that failed to run in the cluster due to insufficient resources, or 2) there are nodes in the cluster that have been underutilized for an extended period of time and their pods can be placed on other existing nodes."
+    category: Architecture
+
   - name: datadog-agent
     displayName: Datadog
     website: "https://github.com/DataDog/datadog-agent"
