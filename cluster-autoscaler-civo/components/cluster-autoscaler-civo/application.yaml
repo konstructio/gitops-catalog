@@ -1,0 +1,44 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-cluster-autoscaler-civo
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '20'
+spec:
+  project: <PROJECT>
+  source:
+    repoURL: https://kubernetes.github.io/autoscaler
+    targetRevision: 9.37.0
+    chart: cluster-autoscaler
+    helm:
+      releaseName: cluster-autoscaler-civo
+      values: |
+        autoDiscovery:
+          clusterName: <CLUSTER_NAME>
+        cloudProvider: civo
+        extraArgs:
+          nodes: 1:10:<CLUSTER_NAME>
+          skip-nodes-with-local-storage: false
+          skip-nodes-with-system-pods: false
+        extraEnvSecrets:
+          CIVO_API_KEY:
+            name: civo-api-access
+            key: api-key
+          CIVO_API_URL:
+            name: civo-api-access
+            key: api-url
+          CIVO_CLUSTER_ID:
+            name: civo-api-access
+            key: cluster-id
+          CIVO_REGION:
+            name: civo-api-access
+            key: region
+  destination:
+    name: <CLUSTER_DESTINATION>
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
