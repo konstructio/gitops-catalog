@@ -1,0 +1,20 @@
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: grapple-install-cm
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+data:
+  TARGET_PLATFORM: "Kubefirst"
+  GRAPPLE_DNS: "<DOMAIN_NAME>"
+  GRAPPLE_VERSION: "0.2.7"
+  AUTO_CONFIRM: "true"
+  # EMAIL: ""
+  ORGANIZATION: "<GITHUB_OWNER><GITLAB_OWNER>"
+  GITHUB_USERNAME: "<GITHUB_USER>"
+  GITLAB_USERNAME: "<GITLAB_USER>"
+  KUBEFIRST_CLOUD_PROVIDER: "<CLOUD_PROVIDER>"
+  KUBEFIRST_CLOUD_REGION: "<CLOUD_REGION>"
+  KUBEFIRST_CLUSTER_NAME: "<CLUSTER_NAME>"
+  KUBEFIRST_CLUSTER_ID: "<CLUSTER_ID>"

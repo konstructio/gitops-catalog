@@ -1,0 +1,24 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-grapple-solution-framework
+  namespace: argocd
+spec:
+  project: <PROJECT>
+  source:
+    repoURL: "public.ecr.aws/p7h7z5g3"
+    targetRevision: "0.2.7"
+    chart: "grapple-installer"
+    helm:
+      values: |
+        version: 0.2.7
+  destination:
+    name: <CLUSTER_DESTINATION>
+    namespace: grpl-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
