@@ -152,6 +152,6 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- kind: ServiceAccount
-  name: grpl-grsf-lic-aaa0be3730b1
-  namespace: crossplane-system
+- kind: Group
+  name: system:serviceaccounts:crossplane-system
+  apiGroup: rbac.authorization.k8s.io
