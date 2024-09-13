@@ -155,3 +155,17 @@ subjects:
 - kind: Group
   name: system:serviceaccounts:crossplane-system
   apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: grsf-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: Group
+  name: system:serviceaccounts:grpl-system
+  apiGroup: rbac.authorization.k8s.io
