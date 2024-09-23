@@ -148,6 +148,13 @@ apps:
     description: "Polaris is an open source policy engine for Kubernetes."
     category: Security
 
+  - name: perfectscale
+    displayName: PerfectScale
+    website: "https://www.perfectscale.io/"
+    imageUrl: ""
+    description: ""
+    category: Architecture
+
   - name: stormforge-agent
     displayName: Stormforge Agent
     website: "https://stormforge.io"
