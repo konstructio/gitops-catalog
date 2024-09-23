@@ -151,8 +151,8 @@ apps:
   - name: perfectscale
     displayName: PerfectScale
     website: "https://www.perfectscale.io/"
-    imageUrl: ""
-    description: ""
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/perfectscale.svg"
+    description: "Effortlessly right-size and right-scale your Kubernetes environment"
     category: Architecture
 
   - name: stormforge-agent
