@@ -8,11 +8,11 @@ spec:
   project: <PROJECT>
   source:
     repoURL: "public.ecr.aws/p7h7z5g3"
-    targetRevision: "0.2.7"
+    targetRevision: "0.2.8"
     chart: "grapple-installer"
     helm:
       values: |
-        version: 0.2.7
+        version: 0.2.8
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: grpl-system
