@@ -21,6 +21,13 @@ apps:
     description: "Cilium is an open-source, cloud-native tool for managing, securing, and monitoring network connectivity between workloads, powered by the innovative Kernel technology eBPF."
     category: Observability
 
+  - name: cluster-autoscaler-aws
+    displayName: AWS Cluster Autoscaler
+    website: "https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/cluster-autoscaler.svg"
+    description: "Configured for clusters running on AWS. Cluster Autoscaler is a tool that automatically adjusts the size of the Kubernetes cluster when required."
+    category: Architecture
+
   - name: cluster-autoscaler-civo
     displayName: Civo Cluster Autoscaler
     website: "https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler"
