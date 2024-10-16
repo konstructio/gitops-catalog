@@ -19,6 +19,12 @@ spec:
           clusterName: <CLUSTER_NAME>
         awsRegion: <CLOUD_REGION>
         cloudProvider: aws
+        rbac:
+          serviceAccount:
+            annotations: 
+              eks.amazonaws.com/role-arn : arn:aws:iam::<AWS_ACCOUNT_ID>:role/cluster-autoscaler-<CLUSTER_NAME>
+            create: true
+            name: "cluster-autoscaler"
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: kube-system
