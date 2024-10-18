@@ -148,6 +148,13 @@ apps:
     description: "Polaris is an open source policy engine for Kubernetes."
     category: Security
 
+  - name: spinkube-operator
+    displayName: Spinekube Operator
+    website: "https://github.com/spinkube/spin-operator"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/spinkube-operator.svg"
+    description: "Spin Operator is a Kubernetes operator that empowers platform engineers to deploy Spin applications as custom resources to their Kubernetes clusters."
+    category: Miscellaneous
+
   - name: stormforge-agent
     displayName: Stormforge Agent
     website: "https://stormforge.io"
