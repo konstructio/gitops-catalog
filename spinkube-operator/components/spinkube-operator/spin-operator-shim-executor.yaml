@@ -1,3 +1,4 @@
+---
 apiVersion: core.spinoperator.dev/v1alpha1
 kind: SpinAppExecutor
 metadata:

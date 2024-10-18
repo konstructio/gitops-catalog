@@ -15,7 +15,7 @@ spec:
   project: <PROJECT>
   source:
     chart: spin-operator
-    repoURL: oci://ghcr.io/spinkube/charts/spin-operator
+    repoURL: 'oci://ghcr.io/spinkube/charts/spin-operator'
     targetRevision: 0.3.0
     helm:
       releaseName: spin-operator
