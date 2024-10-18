@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: '10'
+  name: <CLUSTER_NAME>-kwasm-operator
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: kwasm-operator
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
+  source:
+    chart: kwasm-operator
+    repoURL: http://kwasm.sh/kwasm-operator/
+    targetRevision: 0.3.0
+    helm:
+      releaseName: kwasm-operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

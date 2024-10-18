@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-spinkube-operator-components
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '100'
+spec:
+  project: default
+  source:
+    repoURL: <GITOPS_REPO_URL>
+    path: <REGISTRY_PATH>/components/spinkube-operator
+    targetRevision: HEAD
+  destination:
+    name: in-cluster
+    namespace: spinkube-operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
