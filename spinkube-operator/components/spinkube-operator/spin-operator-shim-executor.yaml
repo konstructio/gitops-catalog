@@ -1,0 +1,15 @@
+---
+apiVersion: core.spinoperator.dev/v1alpha1
+kind: SpinAppExecutor
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: '50'
+  name: containerd-shim-spin
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  createDeployment: true
+  deploymentConfig:
+    runtimeClassName: wasmtime-spin-v2
+    installDefaultCACerts: true
