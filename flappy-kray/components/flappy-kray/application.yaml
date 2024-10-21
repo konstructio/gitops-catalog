@@ -19,7 +19,7 @@ spec:
     helm:
       values: |
         image:
-          repository: public.ecr.aws/kubefirst/flappy-kray
+          repository: ghcr.io/konstructio/flappy-kray
         ingress:
           enabled: false
   project: <PROJECT>
