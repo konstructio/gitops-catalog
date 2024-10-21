@@ -16,7 +16,7 @@ spec:
   source:
     chart: kwasm-operator
     repoURL: http://kwasm.sh/kwasm-operator/
-    targetRevision: 0.3.0
+    targetRevision: 0.2.3
     helm:
       releaseName: kwasm-operator
   syncPolicy:
