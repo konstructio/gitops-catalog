@@ -6,6 +6,10 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
+    kubefirst.konstruct.io/application-name: kubescape-operator
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: <PROJECT>
   source:

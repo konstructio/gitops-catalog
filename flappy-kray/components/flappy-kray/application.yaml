@@ -4,10 +4,13 @@ kind: Application
 metadata:
   name: <CLUSTER_NAME>-flappy-kray
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: '0'
+  annotations:
+    kubefirst.konstruct.io/application-name: flappy-kray
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: flappy-kray

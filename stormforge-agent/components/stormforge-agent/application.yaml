@@ -4,10 +4,12 @@ kind: Application
 metadata:
   name: <CLUSTER_NAME>-stormforge-agent
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: '3'
+    kubefirst.konstruct.io/application-name: stormforge-agent
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: stormforge-system

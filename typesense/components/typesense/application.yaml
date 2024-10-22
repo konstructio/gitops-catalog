@@ -6,6 +6,8 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '20'
+    kubefirst.konstruct.io/application-name: typesense
+    kubefirst.konstruct.io/source: catalog-templates
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

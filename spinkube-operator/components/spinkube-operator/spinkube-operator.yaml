@@ -2,10 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: '60'
   name: <CLUSTER_NAME>-spinkube-operator
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '60'
+    kubefirst.konstruct.io/application-name: spinkube-operator
+    kubefirst.konstruct.io/source: catalog-templates
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
