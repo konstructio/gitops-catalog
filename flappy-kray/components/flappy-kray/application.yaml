@@ -7,7 +7,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    catalog.konstruct.io/name: 'Flappy kray'
+    catalog.konstruct.io/name: 'flappy-kray'
     argocd.argoproj.io/sync-wave: '0'
 spec:
   destination:
