@@ -6,12 +6,34 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: '10'
+    kubefirst.konstruct.io/application-name: goldilocks
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: <PROJECT>
   source:
     repoURL: 'https://charts.fairwinds.com/stable'
     targetRevision: 6.5.6
     chart: goldilocks
+    values: |
+      dashboard:
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+            argocd.argoproj.io/sync-wave: '1'
+          hosts:
+            - host: goldilocks.<DOMAIN_NAME>
+              paths:
+                - path: /
+                  type: ImplementationSpecific
+
+          tls:
+          - secretName: goldilocks-tls
+            hosts:
+              - goldilocks.<DOMAIN_NAME>
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: goldilocks

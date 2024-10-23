@@ -4,6 +4,9 @@ kind: Application
 metadata:
   name: <CLUSTER_NAME>-supabase
   namespace: argocd
+  annotations:
+    kubefirst.konstruct.io/application-name: supabase
+    kubefirst.konstruct.io/source: catalog-templates
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

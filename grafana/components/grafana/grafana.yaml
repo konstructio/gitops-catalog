@@ -2,10 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: '20'
   name: <CLUSTER_NAME>-grafana
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '20'
+    kubefirst.konstruct.io/application-name: grafana
+    kubefirst.konstruct.io/source: catalog-templates
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

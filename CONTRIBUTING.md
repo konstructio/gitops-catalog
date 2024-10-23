@@ -25,6 +25,14 @@ To make a new application available for installation, you'll need to:
 - Create a new directory with your new application's name in your fork.
   - Create a `components` folder, and inside, another folder with your application's name.
   - In that latest folder, add, and organize your Argo CD manifest file(s) into it.
+    - Annotate your Argo CD application with the following annotations. The Kubefirst platform uses this information to surface installed application in the UI.
+
+    ```yaml
+    annotations:
+      kubefirst.konstruct.io/application-name: <appName>
+      kubefirst.konstruct.io/source: catalog-templates
+    ```
+
     - Don't forget to look at the [Kubefirst Tokens](#kubefirst-tokens) section as you can dynamically add specific values to your manifests like domain or cluster names.
   - In the root folder of your application create an "App of Apps" YAML file that will point to the component folder.
 - Add a SVG file of the application's logo, named `<appName>.svg` under the [logos folder](https://github.com/kubefirst/gitops-catalog/tree/main/logos).
