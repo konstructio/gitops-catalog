@@ -9,7 +9,7 @@ metadata:
     kubefirst.konstruct.io/application-name: opencost
     kubefirst.konstruct.io/source: catalog-templates
   finalizers:
-    - resources-finalizer.argocd.argoproj.io.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: opencost
