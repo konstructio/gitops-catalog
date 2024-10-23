@@ -20,8 +20,8 @@ spec:
       dashboard:
         ingress:
           enabled: true
-          # ingressClassName: 
-          annotations: 
+          # ingressClassName:
+          annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
             argocd.argoproj.io/sync-wave: '1'
           hosts:
