@@ -7,6 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "0"
 data:
   TARGET_PLATFORM: "Kubefirst"
+  INSTALL_KUBEBLOCKS: "true"
   GRAPPLE_DNS: "<DOMAIN_NAME>"
   GRAPPLE_VERSION: "0.2.8"
   AUTO_CONFIRM: "true"
