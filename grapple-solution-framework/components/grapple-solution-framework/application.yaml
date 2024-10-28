@@ -16,7 +16,7 @@ spec:
         kubeblocks:
           enabled: true
         grapple:
-          dns: "<DOMAIN_NAME>""
+          dns: "<DOMAIN_NAME>"
           version: "0.2.8"
         kubefirst:
           provider: "<CLOUD_PROVIDER>"
