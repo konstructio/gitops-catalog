@@ -12,7 +12,21 @@ spec:
     chart: "grapple-installer"
     helm:
       values: |
-        version: 0.2.8
+        platform: "Kubefirst"
+        kubeblocks:
+          enabled: true
+        grapple:
+          dns: "<DOMAIN_NAME>""
+          version: "0.2.8"
+        kubefirst:
+          provider: "<CLOUD_PROVIDER>"
+          region: "<CLOUD_REGION>"
+          cluster:
+            name: "<CLUSTER_NAME>"
+            id: "<CLUSTER_ID>"
+          organization: "<GITHUB_OWNER><GITLAB_OWNER>"
+          githubuser: "<GITHUB_USER>"
+          gitlabuser: "<GITLAB_USER>"
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: grpl-system
