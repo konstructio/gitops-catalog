@@ -1,4 +1,5 @@
-app: 
+---
+app:
   ingress:
     enabled: true
     hosts:

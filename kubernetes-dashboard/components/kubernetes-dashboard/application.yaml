@@ -12,9 +12,9 @@ metadata:
 spec:
   project: <PROJECT>
   sources:
-    repoURL: 'https://kubernetes.github.io/dashboard'
-    targetRevision: 7.9.0
-    chart: kubernetes-dashboard
+    - repoURL: "https://kubernetes.github.io/dashboard"
+      targetRevision: 7.9.0
+      chart: kubernetes-dashboard
       helm:
         valueFiles:
           - $values/registry/clusters/<CLUSTER_NAME>/components/kubernetes-dashboard/values.yaml
