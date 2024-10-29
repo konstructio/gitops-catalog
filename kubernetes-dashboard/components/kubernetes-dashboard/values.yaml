@@ -1,0 +1,14 @@
+app: 
+  ingress:
+    enabled: true
+    hosts:
+      - kubernetes-dashboard.<CLUSTER_NAME>.<DOMAIN_NAME>
+    ingressClassName: nginx
+    tls:
+      enabled: true
+      secretName: "kubernetes-dashboard-tls"
+    issuer:
+      scope: cluster
+      name: "letsencrypt-prod"
+    annotations:
+      argocd.argoproj.io/sync-wave: "2"

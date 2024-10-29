@@ -11,20 +11,19 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: <PROJECT>
-  source:
+  sources:
     repoURL: 'https://kubernetes.github.io/dashboard'
-    targetRevision: 6.0.0
+    targetRevision: 7.9.0
     chart: kubernetes-dashboard
-    helm:
-      values: |
-        app:
-          ingress:
-            hosts:
-              # keep only the 'localhost' host if you only want to access Dashboard using 'kubectl port-forward ...' on:
-              # https://localhost:8443
-              # please note that the ingress itself is managed in ingress.yaml
-              - localhost
-              - kubernetes-dashboard.<DOMAIN_NAME>
+      helm:
+        valueFiles:
+          - $values/registry/clusters/<CLUSTER_NAME>/components/kubernetes-dashboard/values.yaml
+    - repoURL: <GITOPS_REPO_URL>
+      targetRevision: HEAD
+      ref: values
+    - repoURL: <GITOPS_REPO_URL>
+      path: registry/clusters/<CLUSTER_NAME>/components/kubernetes-dashboard/dependencies/
+      targetRevision: HEAD
   destination:
     name: <CLUSTER_DESTINATION>
     namespace: kubernetes-dashboard
