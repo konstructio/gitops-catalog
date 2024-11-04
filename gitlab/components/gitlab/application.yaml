@@ -100,10 +100,12 @@ kind: Application
 metadata:
   name: gitlab
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: '30'
+    kubefirst.konstruct.io/application-name: gitlab
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: <CLUSTER_DESTINATION>
