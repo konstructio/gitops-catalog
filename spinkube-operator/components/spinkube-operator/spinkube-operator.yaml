@@ -2,31 +2,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: <CLUSTER_NAME>-kyverno
+  name: <CLUSTER_NAME>-spinkube-operator
   namespace: argocd
   annotations:
-    kubefirst.konstruct.io/application-name: kyverno
+    argocd.argoproj.io/sync-wave: '60'
+    kubefirst.konstruct.io/application-name: spinkube-operator
     kubefirst.konstruct.io/source: catalog-templates
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: kyverno
+    namespace: spin-operator
     name: <CLUSTER_DESTINATION>
   project: <PROJECT>
   source:
-    chart: kyverno
-    repoURL: https://kyverno.github.io/kyverno
-    targetRevision: v3.0.4
+    chart: spin-operator
+    repoURL: ghcr.io/spinkube/charts
+    targetRevision: 0.3.0
     helm:
-      releaseName: kyverno
-      # values: |
-      #   example: value
+      releaseName: spin-operator
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      # https://kyverno.io/docs/installation/platform-notes/#notes-for-argocd-users
-      - Replace=true

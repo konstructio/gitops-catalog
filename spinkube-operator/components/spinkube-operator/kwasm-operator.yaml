@@ -2,24 +2,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: <CLUSTER_NAME>-mysql
-  namespace: argocd
   annotations:
-    kubefirst.konstruct.io/application-name: mysql
-    kubefirst.konstruct.io/source: catalog-templates
+    argocd.argoproj.io/sync-wave: '10'
+  name: <CLUSTER_NAME>-kwasm-operator
+  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: mysql
+    namespace: kwasm-operator
     name: <CLUSTER_DESTINATION>
   project: <PROJECT>
   source:
-    chart: mysql
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 9.19.1
+    chart: kwasm-operator
+    repoURL: http://kwasm.sh/kwasm-operator/
+    targetRevision: 0.2.3
     helm:
-      releaseName: my-mysql
+      releaseName: kwasm-operator
   syncPolicy:
     automated:
       prune: true

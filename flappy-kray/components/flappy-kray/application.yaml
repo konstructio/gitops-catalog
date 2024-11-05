@@ -4,10 +4,12 @@ kind: Application
 metadata:
   name: <CLUSTER_NAME>-flappy-kray
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: '0'
+    kubefirst.konstruct.io/application-name: flappy-kray
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: flappy-kray
@@ -19,9 +21,23 @@ spec:
     helm:
       values: |
         image:
-          repository: public.ecr.aws/kubefirst/flappy-kray
+          repository: ghcr.io/konstructio/flappy-kray
+
         ingress:
-          enabled: false
+          enabled: true
+          className: nginx
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+            argocd.argoproj.io/sync-wave: '1'
+          hosts:
+            - host: flappy-kray.<DOMAIN_NAME>
+              paths:
+                - path: /
+                  pathType: Prefix
+          tls:
+          - secretName: flappy-kray-tls
+            hosts:
+              - flappy-kray.<DOMAIN_NAME>
   project: <PROJECT>
   syncPolicy:
     syncOptions:

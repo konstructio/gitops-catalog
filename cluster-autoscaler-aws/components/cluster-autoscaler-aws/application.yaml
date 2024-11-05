@@ -1,0 +1,36 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-cluster-autoscaler-aws
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '20'
+    kubefirst.konstruct.io/application-name: cluster-autoscaler-aws
+    kubefirst.konstruct.io/source: catalog-templates
+spec:
+  project: <PROJECT>
+  source:
+    repoURL: https://kubernetes.github.io/autoscaler
+    targetRevision: 9.37.0
+    chart: cluster-autoscaler
+    helm:
+      releaseName: cluster-autoscaler-aws
+      values: |
+        autoDiscovery:
+          clusterName: <CLUSTER_NAME>
+        awsRegion: <CLOUD_REGION>
+        cloudProvider: aws
+        rbac:
+          serviceAccount:
+            annotations:
+              eks.amazonaws.com/role-arn : arn:aws:iam::<AWS_ACCOUNT_ID>:role/cluster-autoscaler-<CLUSTER_NAME>
+            create: true
+            name: "cluster-autoscaler"
+  destination:
+    name: <CLUSTER_DESTINATION>
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

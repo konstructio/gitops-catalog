@@ -4,6 +4,11 @@ kind: Application
 metadata:
   name: <CLUSTER_NAME>-kubernetes-dashboard
   namespace: argocd
+  annotations:
+    kubefirst.konstruct.io/application-name: kubernetes-dashboard
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: <PROJECT>
   source:
