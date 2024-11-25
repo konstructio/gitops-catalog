@@ -1,0 +1,38 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-grapple-solution-framework
+  namespace: argocd
+spec:
+  project: <PROJECT>
+  source:
+    repoURL: "public.ecr.aws/p7h7z5g3"
+    targetRevision: "0.2.8"
+    chart: "grapple-installer"
+    helm:
+      values: |
+        platform: "Kubefirst"
+        kubeblocks:
+          enabled: true
+        grapple:
+          dns: "<DOMAIN_NAME>"
+          version: "0.2.8"
+        kubefirst:
+          provider: "<CLOUD_PROVIDER>"
+          region: "<CLOUD_REGION>"
+          cluster:
+            name: "<CLUSTER_NAME>"
+            id: "<CLUSTER_ID>"
+          organization: "<GITHUB_OWNER><GITLAB_OWNER>"
+          githubuser: "<GITHUB_USER>"
+          gitlabuser: "<GITLAB_USER>"
+  destination:
+    name: <CLUSTER_DESTINATION>
+    namespace: grpl-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
