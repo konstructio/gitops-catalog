@@ -80,7 +80,7 @@ apps:
   - name: grapple-solution-framework
     displayName: "grapple solution framework"
     website: "https://www.grapple-solutions.com/"
-    imageUrl: "https://grapple-solutions.com/wp-content/uploads/2024/11/grapple-logo-with-slogan.png"
+    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/grapple-solution-framework.svg"
     description: "Turbo-Boost your development project with automation using the grapple solution framework. Instant API and UI module generate in your kubernetes cluster or your development project."
     category: Architecture
 
