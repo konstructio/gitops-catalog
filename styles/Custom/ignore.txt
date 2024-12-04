@@ -10,6 +10,7 @@ aws
 chartmuseum
 civo
 cli
+cloudDenylist
 config
 cronjob
 
@@ -24,6 +25,7 @@ eks
 
 # G
 gcp
+gitDenylist
 github
 gitlab
 gitops
