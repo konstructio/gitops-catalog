@@ -57,6 +57,8 @@ To make a new application available for installation, you'll need to:
     - Security
     - Storage
     - Testing
+  - **cloudDenylist**: a list of Kubefirst supported cloud(s) where your application shouldn't be available in the catalog. In most cases, you don't need this.
+  - **gitDenylist**: a list of Git provider Kubefirst support that should not let the user install this application. In most cases, you don't need this.
 - Create a pull request with the changes from your fork to our repository main branch. Be sure to [sign your commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
 
 Feel free to check the other applications to find examples.
