@@ -3,35 +3,35 @@ apps:
   - name: argo-events
     displayName: Argo Events
     website: "https://github.com/argoproj/argo-events"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-events.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/argo-events.svg"
     description: "Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc. on events from a variety of sources."
     category: CI/CD
 
   - name: argo-rollouts
     displayName: Argo Rollouts
     website: "https://github.com/argoproj/argo-rollouts"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/argo-rollouts.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/argo-rollouts.svg"
     description: "A Kubernetes controller & set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, & progressive delivery features to Kubernetes."
     category: CI/CD
 
   - name: cilium
     displayName: Cilium
     website: "https://cilium.io/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/cilium.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/cilium.svg"
     description: "Cilium is an open-source, cloud-native tool for managing, securing, and monitoring network connectivity between workloads, powered by the innovative Kernel technology eBPF."
     category: Observability
 
   - name: cluster-autoscaler-aws
     displayName: AWS Cluster Autoscaler
     website: "https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/cluster-autoscaler.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/cluster-autoscaler.svg"
     description: "Configured for clusters running on AWS. Cluster Autoscaler is a tool that automatically adjusts the size of the Kubernetes cluster when required."
     category: Architecture
 
   - name: cluster-autoscaler-civo
     displayName: Civo Cluster Autoscaler
     website: "https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/cluster-autoscaler.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/cluster-autoscaler.svg"
     description: "Configured for clusters running on Civo. Cluster Autoscaler is a tool that automatically adjusts the size of the Kubernetes cluster when required."
     category: Architecture
 
@@ -45,56 +45,56 @@ apps:
       - name: app-key
         label: Datadog application key
         env: DATADOG_APP_KEY
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/datadog-agent.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/datadog-agent.svg"
     description: "Datadog's SaaS-based infrastructure monitoring provides metrics, visualizations, and alerting to ensure your engineering teams can main/logostain and optimize your cloud or hybrid environments."
     category: Observability
 
   - name: flappy-kray
     displayName: Flappy K-Ray
     website: "https://kray.kubefirst.io"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/flappy-kray.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/flappy-kray.svg"
     description: "Flappy K-Ray is an adaptation of the popular Flappy Bird game where Kubefirst's mascot K-Ray navigates an endless maze of GitOps pipelines."
     category: End user application
 
   - name: gitlab
     displayName: GitLab
     website: "https://docs.gitlab.com/charts/installation/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/gitlab.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/gitlab.svg"
     description: "GitLab Server - a complete devops solution that does it all, from project planning and source code management to CI/CD, monitoring, and security."
     category: CI/CD
 
   - name: goldilocks
     displayName: Goldilocks
     website: "https://github.com/FairwindsOps/goldilocks"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/goldilocks.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/goldilocks.svg"
     description: "Goldilocks is a utility that can help you identify a starting point for resource requests and limits."
     category: Monitoring
 
   - name: grafana
     displayName: Grafana
     website: "https://github.com/grafana/grafana"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/grafana.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/grafana.svg"
     description: "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and more."
     category: Observability
 
   - name: grapple-solution-framework
     displayName: "grapple solution framework"
     website: "https://www.grapple-solutions.com/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/grapple-solution-framework.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/grapple-solution-framework.svg"
     description: "Turbo-Boost your development project with automation using the grapple solution framework. Instant API and UI module generate in your kubernetes cluster or your development project."
     category: Architecture
 
   - name: kafka
     displayName: Kafka
     website: "https://kafka.apache.org/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kafka.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/kafka.svg"
     description: "Apache Kafka is an open-source distributed event streaming platform for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications."
     category: Miscellaneous
 
   - name: kratix
     displayName: Kratix
     website: "https://github.com/syntasso/kratix"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kratix.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/kratix.svg"
     description: "Kratix is an open-source platform framework that combines the flexibility and customisability of building your own platform from scratch with the on-demand and self-service power of public clouds."
     category: App Management
     cloudDenylist:
@@ -109,70 +109,70 @@ apps:
   - name: kubedoom
     displayName: Kube DOOM
     website: "https://github.com/storax/kubedoom"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubedoom.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/kubedoom.svg"
     description: "Kill Kubernetes pods by playing Id's DOOM!s"
     category: Testing
 
   - name: kubeinvaders
     displayName: KubeInvaders
     website: "https://github.com/lucky-sideburn/KubeInvaders"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubeinvaders.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/kubeinvaders.svg"
     description: "Gamified Chaos Engineering Tool for Kubernetes"
     category: Testing
 
   - name: kubernetes-dashboard
     displayName: Kubernetes Dashboard
     website: "https://github.com/kubernetes/dashboard"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubernetes-dashboard.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/kubernetes-dashboard.svg"
     description: "Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage apps running in the cluster & troubleshoot them, as well as manage the cluster itself."
     category: Observability
 
   - name: kubescape-operator
     displayName: Kubescape Operator
     website: "https://github.com/kubescape/kubescape/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kubescape-operator.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/kubescape-operator.svg"
     description: "Kubescape is an open-source Kubernetes security platform for your IDE, CI/CD pipelines, and clusters. It includes risk analysis, security, compliance, and misconfiguration scanning."
     category: Security
 
   - name: kyverno
     displayName: Kyverno
     website: "https://github.com/kyverno/kyverno"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/kyverno.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/kyverno.svg"
     description: "Kyverno is a policy engine designed for Kubernetes. Kyverno Policies are managed as Kubernetes resources and no new language is required to write policies."
     category: Security
 
   - name: metrics-server
     displayName: Metrics Server
     website: "https://github.com/kubernetes-sigs/metrics-server"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/metrics-server.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/metrics-server.svg"
     description: "Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines."
     category: Observability
 
   - name: mysql
     displayName: MySQL
     website: "https://www.mysql.com/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/mysql.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/mysql.svg"
     description: "MySQL is an open source SQL database server."
     category: Database
 
   - name: opencost
     displayName: OpenCost
     website: "https://github.com/opencost/opencost"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/opencost.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/opencost.svg"
     description: "OpenCost is a vendor-neutral open source project for measuring and allocating infrastructure and container costs in real time."
     category: FinOps
 
   - name: polaris
     displayName: Polaris
     website: "https://github.com/FairwindsOps/polaris"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/polaris.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/polaris.svg"
     description: "Polaris is an open source policy engine for Kubernetes."
     category: Security
 
   - name: spinkube-operator
     displayName: Spinekube Operator
     website: "https://github.com/spinkube/spin-operator"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/spinkube-operator.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/spinkube-operator.svg"
     description: "Spin Operator is a Kubernetes operator that empowers platform engineers to deploy Spin applications as custom resources to their Kubernetes clusters."
     category: Miscellaneous
 
@@ -192,21 +192,21 @@ apps:
       - name: STORMFORGE_CLIENT_SECRET
         label: Authorization ClientSecret)
         env: STORMFORGE_CLIENT_SECRET
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/stormforge.png"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/stormforge.svg"
     description: "StormForge provides automated Kubernetes resource management for platform engineering teams to continuously rightsize workloads with HPA compatibility."
     category: Architecture
 
   - name: supabase
     displayName: Supabase
     website: "https://www.supabase.com/"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/supabase.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/supabase.svg"
     description: "The open source Firebase alternative."
     category: Database
 
   - name: testkube
     displayName: Testkube
     website: "https://github.com/kubeshop/testkube"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/testkube.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/testkube.svg"
     description: "Testkube is a Kubernetes-native testing framework that allows you to automate the executions of your existing testing tools inside your Kubernetes cluster."
     category: Testing
     secretKeys:
@@ -223,27 +223,27 @@ apps:
   - name: tracetest
     displayName: Tracetest
     website: "https://github.com/kubeshop/tracetest"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/tracetest.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/tracetest.svg"
     description: "Tracetest uses your existing OpenTelemetry traces to power trace-based testing with assertions against your trace data at every point of the request transaction."
     category: Testing
 
   - name: typesense
     displayName: TypeSense
     website: "https://github.com/typesense/typesense"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/typesense.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/typesense.svg"
     description: "Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences (deployed using the Typesense-Kubernetes-Operator)."
     category: End user application
 
   - name: vertical-pod-autoscaler
     displayName: Vertical Pod Autoscaler
     website: "https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/vertical-pod-autoscaler.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/vertical-pod-autoscaler.svg"
     description: "Vertical Pod Autoscaler (VPA) frees users from the necessity of setting up-to-date resource limits and requests for the containers in their pods."
     category: Architecture
 
   - name: yourls
     displayName: YOURLS
     website: "https://github.com/YOURLS/YOURLS"
-    imageUrl: "https://raw.githubusercontent.com/kubefirst/gitops-catalog/main/logos/yourls.svg"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/yourls.svg"
     description: "Self hosted URL shortener."
     category: End user application
