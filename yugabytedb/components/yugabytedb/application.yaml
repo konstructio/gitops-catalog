@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-yugabytedb
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: '0'
+    kubefirst.konstruct.io/application-name: <appName>
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: yugabytedb
+    name: <CLUSTER_DESTINATION>
+  source:
+    repoURL: 'https://charts.yugabyte.com'
+    targetRevision: 2.23.1
+    chart: yugabyte
+  project: <PROJECT>
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

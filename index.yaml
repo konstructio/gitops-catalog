@@ -247,3 +247,10 @@ apps:
     imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/yourls.svg"
     description: "Self hosted URL shortener."
     category: End user application
+
+  - name: yugabytedb
+    displayName: YugabyteDB
+    website: "https://github.com/yugabyte/yugabyte-db"
+    imageUrl: "https://raw.githubusercontent.com/konstructio/gitops-catalog/main/logos/yugabytedb.svg"
+    description: "The cloud native distributed SQL database for mission-critical applications."
+    category: Database
