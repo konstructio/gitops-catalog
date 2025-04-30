@@ -1,21 +1,4 @@
 ---
 app:
   ingress:
-    enabled: true
-    hosts:
-      - kubernetes-dashboard.<CLUSTER_NAME>.<DOMAIN_NAME>
-    ingressClassName: nginx
-    tls:
-      enabled: true
-      secretName: "kubernetes-dashboard-tls"
-    # Adds following annotation cert-manager.io/cluster-issuer: letsencrypt-prod
-    issuer:
-      scope: cluster
-      name: "letsencrypt-prod"
-    # This will append our Ingress with annotations required by our default configuration.
-    #    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    #    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    #    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    useDefaultAnnotations: true
-    annotations:
-      argocd.argoproj.io/sync-wave: "2"
+    enabled: false
