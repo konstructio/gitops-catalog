@@ -37,26 +37,26 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- annotations:
-   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-   cert-manager.io/cluster-issuer: letsencrypt-prod
-   argocd.argoproj.io/sync-wave: '1'
- name: kubernetes-dashboard
- namespace: kubernetes-dashboard
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    argocd.argoproj.io/sync-wave: '1'
+  name: kubernetes-dashboard
+  namespace: kubernetes-dashboard
 spec:
- ingressClassName: nginx
- rules:
-   - host: kubernetes-dashboard-<CLUSTER_NAME>.<DOMAIN_NAME>
-     http:
-       paths:
-         - backend:
-             service:
-               name: <CLUSTER_NAME>-kubernetes-dashboard-kong-proxy
-               port:
-                 number: 443
-           path: /
-           pathType: Prefix
- tls:
-   - hosts:
-       - kubernetes-dashboard-<CLUSTER_NAME>.<DOMAIN_NAME>
-     secretName: kubernetes-dashboard-tls
+  ingressClassName: nginx
+  rules:
+    - host: kubernetes-dashboard-<CLUSTER_NAME>.<DOMAIN_NAME>
+      http:
+        paths:
+          - backend:
+              service:
+                name: <CLUSTER_NAME>-kubernetes-dashboard-kong-proxy
+                port:
+                  number: 443
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - kubernetes-dashboard-<CLUSTER_NAME>.<DOMAIN_NAME>
+      secretName: kubernetes-dashboard-tls
