@@ -17,7 +17,7 @@ spec:
   source:
     chart: kubeinvaders
     repoURL: https://lucky-sideburn.github.io/helm-charts/
-    targetRevision: 1.9.6
+    targetRevision: 1.9.7
     helm:
       releaseName: kubeinvaders
       values: |
@@ -25,7 +25,7 @@ spec:
           target_namespace: "development"
         deployment:
           image:
-            tag: v1.9.6
+            tag: v1.9.7
         ingress:
           enabled: true
           className: "nginx"
@@ -34,6 +34,7 @@ spec:
             cert-manager.io/cluster-issuer: letsencrypt-prod
             argocd.argoproj.io/sync-wave: '1'
           hostName: kubeinvaders.<DOMAIN_NAME>
+          tls_enabled: true
           tls:
             - hosts:
               - kubeinvaders.<DOMAIN_NAME>
