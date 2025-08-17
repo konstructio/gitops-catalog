@@ -1,0 +1,64 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-ui
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-ui
+  template:
+    metadata:
+      labels:
+        app: kafka-ui
+    spec:
+      containers:
+        - name: kafka-ui
+          image: provectuslabs/kafka-ui:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: KAFKA_CLUSTERS_0_NAME
+              value: "my-kafka"
+            - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
+              value: "my-kafka:9092"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-ui
+  namespace: kafka
+spec:
+  selector:
+    app: kafka-ui
+  ports:
+  - port: 8080
+    targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    argocd.argoproj.io/sync-wave: '1'
+  name: kafka-ui
+  namespace: kafka
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: kafka.<DOMAIN_NAME>
+      http:
+        paths:
+          - backend:
+              service:
+                name: kafka-ui
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - kafka.<DOMAIN_NAME>
+      secretName: kafka-ui-tls
