@@ -30,7 +30,6 @@ spec:
           enabled: true
           className: "nginx"
           annotations:
-            # nginx.ingress.kubernetes.io/ssl-redirect: "true"
             cert-manager.io/cluster-issuer: letsencrypt-prod
             argocd.argoproj.io/sync-wave: '1'
           hostName: kubeinvaders.<DOMAIN_NAME>
