@@ -77,6 +77,7 @@ teardown
 todo
 toolset
 Traefik
+truthy
 truststore
 Typesense
 
@@ -93,5 +94,6 @@ walkthrough
 # X
 
 # Y
+yamllint
 
 # Z
