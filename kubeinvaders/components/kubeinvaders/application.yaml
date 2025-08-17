@@ -33,6 +33,7 @@ spec:
             cert-manager.io/cluster-issuer: letsencrypt-prod
             argocd.argoproj.io/sync-wave: '1'
           hostName: kubeinvaders.<DOMAIN_NAME>
+          tls_enabled: true
           tls:
             - hosts:
               - kubeinvaders.<DOMAIN_NAME>
