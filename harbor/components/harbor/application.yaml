@@ -1,0 +1,97 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <CLUSTER_NAME>-harbor
+  namespace: argocd
+  annotations:
+    kubefirst.konstruct.io/application-name: harbor
+    kubefirst.konstruct.io/source: catalog-templates
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: harbor
+    name: <CLUSTER_DESTINATION>
+  project: <PROJECT>
+  source:
+    chart: harbor
+    repoURL: https://helm.goharbor.io
+    targetRevision: 1.15.1
+    helm:
+      releaseName: harbor
+      values: |
+        expose:
+          type: ingress
+          tls:
+            enabled: true
+            certSource: secret
+            secret:
+              secretName: harbor-tls
+          ingress:
+            hosts:
+              core: harbor.<DOMAIN_NAME>
+            className: nginx
+            annotations:
+              cert-manager.io/cluster-issuer: letsencrypt-prod
+              nginx.ingress.kubernetes.io/ssl-redirect: "true"
+              nginx.ingress.kubernetes.io/proxy-body-size: "0"
+              nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+              nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+        
+        externalURL: https://harbor.<DOMAIN_NAME>
+        
+        harborAdminPassword: ""  # Will be set by external secret
+        existingSecretAdminPassword: harbor-admin-secret
+        existingSecretAdminPasswordKey: HARBOR_ADMIN_PASSWORD
+        
+        persistence:
+          enabled: true
+          persistentVolumeClaim:
+            registry:
+              storageClass: ""
+              size: 50Gi
+            database:
+              storageClass: ""
+              size: 5Gi
+            redis:
+              storageClass: ""
+              size: 5Gi
+            trivy:
+              storageClass: ""
+              size: 10Gi
+        
+        portal:
+          replicas: 1
+        
+        core:
+          replicas: 1
+        
+        registry:
+          replicas: 1
+        
+        trivy:
+          enabled: true
+          gitHubToken: ""
+          skipUpdate: false
+        
+        database:
+          type: internal
+          internal:
+            password: ""  # Will be auto-generated
+        
+        redis:
+          type: internal
+          internal:
+            password: ""  # Will be auto-generated
+        
+        metrics:
+          enabled: true
+          serviceMonitor:
+            enabled: false
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
