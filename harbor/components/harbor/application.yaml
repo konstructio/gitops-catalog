@@ -38,13 +38,10 @@ spec:
               nginx.ingress.kubernetes.io/proxy-body-size: "0"
               nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
               nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
-        
         externalURL: https://harbor.<DOMAIN_NAME>
-        
         harborAdminPassword: ""  # Will be set by external secret
         existingSecretAdminPassword: harbor-admin-secret
         existingSecretAdminPasswordKey: HARBOR_ADMIN_PASSWORD
-        
         persistence:
           enabled: true
           persistentVolumeClaim:
@@ -60,31 +57,24 @@ spec:
             trivy:
               storageClass: ""
               size: 10Gi
-        
         portal:
           replicas: 1
-        
         core:
           replicas: 1
-        
         registry:
           replicas: 1
-        
         trivy:
           enabled: true
           gitHubToken: ""
           skipUpdate: false
-        
         database:
           type: internal
           internal:
             password: ""  # Will be auto-generated
-        
         redis:
           type: internal
           internal:
             password: ""  # Will be auto-generated
-        
         metrics:
           enabled: true
           serviceMonitor:
