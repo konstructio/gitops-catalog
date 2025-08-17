@@ -45,7 +45,7 @@ When adding a new application to the catalog, follow this structure:
 ### Application Structure
 
 Each application follows the "App of Apps" pattern:
-- Root manifest (`<app-name>.yaml`) deploys to ArgoCD namespace
+- Root manifest (`<app-name>.yaml`) deploys to `arcocd` namespace
 - Points to components folder in the GitOps repository
 - Components contain the actual application manifests
 
@@ -56,7 +56,7 @@ Applications use Kubefirst tokens that get replaced at deployment time:
 - `<GITOPS_REPO_URL>`: GitOps repository URL
 - `<REGISTRY_PATH>`: Path in the registry
 - `<CLUSTER_DESTINATION>`: Target cluster
-- `<PROJECT>`: ArgoCD project
+- `<PROJECT>`: Argo CD project
 - `<DOMAIN_NAME>`: Domain for ingress
 - Full list in CONTRIBUTING.md
 
