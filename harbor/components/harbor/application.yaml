@@ -85,7 +85,6 @@ spec:
         # Disable internal TLS to avoid the SSL directory errors
         internalTLS:
           enabled: false
-          
         # Core secret for internal components
         core:
           secret: ""  # Let Harbor generate this
