@@ -93,8 +93,9 @@ spec:
           
         # Core secret for internal components
         core:
-          secret: ""  # Let Harbor generate this
-          secretName: harbor-core
+          secret: ""
+          # Don't set secretName - let Harbor generate it
+          # secretName: ""
         metrics:
           enabled: true
           serviceMonitor:
