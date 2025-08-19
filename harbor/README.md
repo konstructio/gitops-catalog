@@ -11,7 +11,7 @@ This Harbor deployment is configured for the Kubefirst GitOps catalog with:
 
 ## Required Vault Configuration
 
-Before deploying Harbor, configure the following secrets in Vault:
+Before deploying Harbor, configure the following secrets need to be in Vault:
 
 ```bash
 vault kv put secret/harbor \
@@ -20,19 +20,11 @@ vault kv put secret/harbor \
   REDIS_PASSWORD="your-secure-redis-password"
 ```
 
+These are configured as secret inputs and will be added to vault automatically, and pulled into your Harbor instand correctly.
+
 ## Token Service Private Key
 
 Harbor automatically generates the required private key for its token service during deployment. This ensures Docker authentication works properly without storing any sensitive keys in Git.
-
-## Known Issues Resolved
-
-### Docker Login 500 Error
-
-If you encounter a 500 error during `docker login`, check that Harbor has successfully auto-generated its token service keys. The Harbor Helm chart handles this automatically when deployed correctly.
-
-### Database "relation properties does not exist" Error
-
-This error occurs when the Harbor database isn't properly initialized. Ensure all external secrets are created before deploying Harbor.
 
 ## Components
 
