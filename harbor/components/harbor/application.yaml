@@ -39,7 +39,6 @@ spec:
               nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
               nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
         externalURL: https://harbor.<DOMAIN_NAME>
-        
         harborAdminPassword: ""  # Don't set this when using existingSecretAdminPassword
         secretKey: harbor-admin
         existingSecretAdminPassword: harbor-admin-secret
@@ -65,10 +64,8 @@ spec:
           replicas: 1
         registry:
           replicas: 1
-          
         jobservice:
           replicas: 1
-          
         trivy:
           enabled: true
           gitHubToken: ""
@@ -79,18 +76,15 @@ spec:
             # Password from external secret
             existingSecret: harbor-database-secret
             existingSecretPasswordKey: POSTGRES_PASSWORD
-            
         redis:
           type: internal
           internal:
             # Password from external secret
             existingSecret: harbor-redis-secret
             existingSecretPasswordKey: REDIS_PASSWORD
-            
         # Disable internal TLS to avoid the SSL directory errors
         internalTLS:
           enabled: false
-          
         # Core secret for internal components
         core:
           secret: ""
