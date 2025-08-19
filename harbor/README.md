@@ -3,6 +3,7 @@
 ## Overview
 
 This Harbor deployment is configured for the Kubefirst GitOps catalog with:
+
 - HTTPS ingress at `harbor.<DOMAIN_NAME>`
 - External secrets integration with Vault
 - Persistent storage for all components
@@ -26,9 +27,11 @@ Harbor automatically generates the required private key for its token service du
 ## Known Issues Resolved
 
 ### Docker Login 500 Error
+
 If you encounter a 500 error during `docker login`, check that Harbor has successfully auto-generated its token service keys. The Harbor Helm chart handles this automatically when deployed correctly.
 
 ### Database "relation properties does not exist" Error
+
 This error occurs when the Harbor database isn't properly initialized. Ensure all external secrets are created before deploying Harbor.
 
 ## Components
@@ -44,6 +47,7 @@ This error occurs when the Harbor database isn't properly initialized. Ensure al
 ## Troubleshooting
 
 Check component logs:
+
 ```bash
 kubectl logs -n harbor -l component=core
 kubectl logs -n harbor -l component=registry
@@ -51,11 +55,13 @@ kubectl logs -n harbor -l component=jobservice
 ```
 
 Verify all secrets are created:
+
 ```bash
 kubectl get secrets -n harbor
 ```
 
 The deployment should create:
+
 - `harbor-admin-secret` - Admin credentials (from Vault)
 - `harbor-database-secret` - PostgreSQL password (from Vault)
 - `harbor-redis-secret` - Redis password (from Vault)
